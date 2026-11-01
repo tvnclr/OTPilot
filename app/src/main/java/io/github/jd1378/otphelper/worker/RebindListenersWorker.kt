@@ -15,6 +15,7 @@ import io.github.jd1378.otphelper.SmsListener.Companion.hasSmsPermission
 import io.github.jd1378.otphelper.repository.UserSettingsRepository
 import io.github.jd1378.otphelper.utils.AppLogger
 import io.github.jd1378.otphelper.utils.NotificationHelper
+import tvnclr.flightdeck.otpilot.SensitiveNotifAccess
 
 const val rebindListenersWorkName = "rebind_listeners_work"
 
@@ -65,6 +66,8 @@ constructor(
 
     if (userSettings.modeOfOperation == ModeOfOperation.Notification) {
       SmsListener.disable(applicationContext)
+      // OTPilot: (re)grant access to code notifications before the listener is rebound
+      SensitiveNotifAccess.ensure(applicationContext, notifyIfBlocked = !silent)
     }
 
     if (isNotificationListenerServiceEnabled(applicationContext)) {

@@ -2,4 +2,13 @@
 <!-- OTPilot-specific resources, kept in a separate file to keep upstream merges clean. -->
 <resources>
   <string name="otpilot_app_name" translatable="false">OTPilot</string>
+
+  <string name="otpilot_sensitive_todo">Read code notifications</string>
+  <string name="otpilot_sensitive_grant">Grant</string>
+  <string name="otpilot_sensitive_desc_allowed">Android 15+ hides notifications that contain codes from most apps. OTPilot has access to them.</string>
+  <string name="otpilot_sensitive_desc_blocked">Android 15+ hides notifications that contain codes from most apps, and OTPilot is currently blocked. On a rooted device, tap Grant. Without root, run these ADB commands once:</string>
+  <string name="otpilot_sensitive_desc_unknown">OTPilot could not read this access state from the system. If codes are not being copied, tap Grant (root) or run these ADB commands once:</string>
+  <string name="otpilot_sensitive_grant_failed">Could not grant access. Make sure OTPilot is allowed in your root manager.</string>
+  <string name="otpilot_sensitive_blocked_title">OTPilot can\'t see code notifications</string>
+  <string name="otpilot_sensitive_blocked_text">Android is hiding notifications that contain codes from OTPilot, so they won\'t be copied. Open OTPilot to fix it.</string>
 </resources>

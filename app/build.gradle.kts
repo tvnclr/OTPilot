@@ -21,8 +21,8 @@ android {
     applicationId = "tvnclr.flightdeck.otpilot"
     minSdk = 24
     targetSdk = 36
-    versionCode = 1
-    versionName = "0.1.0"
+    versionCode = 2
+    versionName = "0.2.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables { useSupportLibrary = true }
@@ -191,10 +191,10 @@ class ApplicationVariantAction : Action<ApplicationVariant> {
         val flavor = variant.flavorName
         val builtType = variant.buildType.name
         val versionName = variant.versionName
-        val architecture = abi ?: "-universal"
+        val architecture = abi ?: "universal"
 
         output.outputFileName =
-            "otp-helper--${builtType}-${versionName}-${architecture}-${versionCode}.apk"
+            "otpilot-${builtType}-${versionName}-${architecture}-${versionCode}.apk"
       }
     }
   }

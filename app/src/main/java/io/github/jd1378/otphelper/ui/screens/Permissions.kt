@@ -37,6 +37,7 @@ import io.github.jd1378.otphelper.ui.components.SkipDialog
 import io.github.jd1378.otphelper.ui.components.TitleBar
 import io.github.jd1378.otphelper.ui.components.TodoItem
 import io.github.jd1378.otphelper.ui.components.verticalColumnScrollbar
+import tvnclr.flightdeck.otpilot.SensitiveNotifAccess
 
 @Composable
 fun Permissions(
@@ -178,13 +179,40 @@ fun Permissions(
 
       if (uiState.modeOfOperation == ModeOfOperation.Notification &&
           Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+        // OTPilot: show the real state instead of static instructions
+        val sensitiveState by viewModel.sensitiveNotifState.collectAsStateWithLifecycle()
+        val sensitiveGrantFailed by viewModel.sensitiveGrantFailed.collectAsStateWithLifecycle()
+        val sensitiveAllowed = sensitiveState == SensitiveNotifAccess.State.ALLOWED
+        TodoItem(
+            stringResource(R.string.otpilot_sensitive_todo),
+            actionText = stringResource(R.string.otpilot_sensitive_grant),
+            buttonEnabled = !sensitiveAllowed,
+            checked = sensitiveAllowed,
+            checkboxSemantics = {
+              stateDescription = if (sensitiveAllowed) permissionGranted else permissionNotGranted
+            },
+        ) {
+          viewModel.onGrantSensitiveNotifsPressed(context)
+        }
         Text(
-            stringResource(R.string.read_notifs_android_15_desc),
+            stringResource(
+                when (sensitiveState) {
+                  SensitiveNotifAccess.State.ALLOWED -> R.string.otpilot_sensitive_desc_allowed
+                  SensitiveNotifAccess.State.UNKNOWN -> R.string.otpilot_sensitive_desc_unknown
+                  else -> R.string.otpilot_sensitive_desc_blocked
+                }),
             modifier = Modifier.fillMaxWidth(),
             fontSize = 15.sp)
-
-        CodeBlock(stringResource(R.string.adb_command_sensitive_notifs))
-        CodeBlock(stringResource(R.string.adb_command_kill_app))
+        if (sensitiveGrantFailed) {
+          Text(
+              stringResource(R.string.otpilot_sensitive_grant_failed),
+              modifier = Modifier.fillMaxWidth(),
+              fontSize = 15.sp)
+        }
+        if (!sensitiveAllowed) {
+          CodeBlock(stringResource(R.string.adb_command_sensitive_notifs))
+          CodeBlock(stringResource(R.string.adb_command_kill_app))
+        }
       }
 
       if (uiState.hasAutostartSettings) {

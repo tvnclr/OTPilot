@@ -27,6 +27,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import tvnclr.flightdeck.otpilot.SensitiveNotifAccess
 
 @Immutable
 data class PermissionsUiState(
@@ -59,6 +62,21 @@ constructor(
   private val _hasAutoStartSettings = MutableStateFlow(false)
   private val _hasRestrictedSettings = MutableStateFlow(false)
   private val _showSkipWarning = MutableStateFlow(false)
+
+  // OTPilot: real state of the Android 15+ sensitive-notification access
+  private val _sensitiveNotifState = MutableStateFlow(SensitiveNotifAccess.State.NOT_NEEDED)
+  val sensitiveNotifState: StateFlow<SensitiveNotifAccess.State> = _sensitiveNotifState
+  private val _sensitiveGrantFailed = MutableStateFlow(false)
+  val sensitiveGrantFailed: StateFlow<Boolean> = _sensitiveGrantFailed
+
+  fun onGrantSensitiveNotifsPressed(context: Context) {
+    viewModelScope.launch {
+      val ok = withContext(Dispatchers.IO) { SensitiveNotifAccess.grantWithRoot(context) }
+      _sensitiveGrantFailed.update { !ok }
+      _sensitiveNotifState.update { SensitiveNotifAccess.state(context) }
+      if (ok) MyWorkManager.rebindListeners(context, true)
+    }
+  }
 
   val uiState: StateFlow<PermissionsUiState> =
       combine(
@@ -149,6 +167,7 @@ constructor(
         }
       }
     }
+    _sensitiveNotifState.update { SensitiveNotifAccess.state(context) }
     MyWorkManager.rebindListeners(context, true)
   }
 
