@@ -2,11 +2,4 @@
 # Newly collected cases. Entries that pass get promoted to otpilot_base1.yaml.
 # "pending: true" = known failure, reported but not asserted, until the
 # extractor is improved to handle it.
-
-- name: email_hoyoverse_code_below_en
-  expectedCode: "316974"
-  pending: true
-  message: |-
-    [HoYoverse]Verification Code
-    [HoYoverse]Verification Code
-    Dear User, Please use the verification code below to proceed with the modify email process. 316974 Thank you, HoYoverse Please do not reply to this email as it is auto-
+[]

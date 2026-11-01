@@ -26,7 +26,7 @@ stages:
 
 - [x] Rebrand and real-world regression corpus
 - [x] Root-aware permission handling and status warnings
-- [ ] Context fallback extraction
+- [x] Context fallback extraction
 
 ## Requirements
 

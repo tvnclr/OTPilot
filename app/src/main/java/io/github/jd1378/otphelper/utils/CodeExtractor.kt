@@ -4,6 +4,7 @@ import androidx.compose.runtime.Immutable
 import io.github.jd1378.otphelper.utils.CodeExtractorDefaults.currencyIndicators
 import io.github.jd1378.otphelper.utils.CodeExtractorDefaults.skipPhrases
 import kotlinx.collections.immutable.persistentListOf
+import tvnclr.flightdeck.otpilot.ContextFallback
 
 @Immutable
 data class CodeExtractorResult(
@@ -192,6 +193,12 @@ class CodeExtractor // this comment is to separate parts
 
       if (!foundCode.isNullOrEmpty()) {
         return toEnglishNumbers(foundCode)
+      }
+
+      // OTPilot: keyword found but no code next to it -> look further ahead in the text
+      val keywordEnd = results.first().groups[1]?.range?.last?.plus(1) ?: -1
+      ContextFallback.find(cleanStr, keywordEnd)?.let {
+        return toEnglishNumbers(it)
       }
     }
 

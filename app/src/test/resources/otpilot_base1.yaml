@@ -112,3 +112,42 @@
     Seu código de autenticação de dois fatores
     Seu código de autenticação de dois fatores
     Seu código de Autenticação de Dois Fatores: 572049 Olá, Alex, Você tentou recentemente fazer login a partir de um novo dispositivo, navegador ou local. Para concluir seu login,
+
+- name: email_hoyoverse_code_below_en
+  expectedCode: "316974"
+  message: |-
+    [HoYoverse]Verification Code
+    [HoYoverse]Verification Code
+    Dear User, Please use the verification code below to proceed with the modify email process. 316974 Thank you, HoYoverse Please do not reply to this email as it is auto-
+
+# ── Synthetic guards for the context fallback ─────────────────────────────────
+# Keyword present, code far from it. Numbers that are NOT codes must stay null.
+
+- name: guard_date
+  expectedCode: ~
+  message: "Your verification code expires on 12/05/2026. Request a new one if needed."
+
+- name: guard_order_amount
+  expectedCode: ~
+  message: "Use the code below at checkout. Order #48213 total $1299.00"
+
+- name: guard_year_footer
+  expectedCode: ~
+  message: "Your code will arrive shortly. © 2026 Example Inc."
+
+- name: guard_phone
+  expectedCode: ~
+  message: "Promo code applied. Questions? Call +5511912345678 or 0800 7071234"
+
+- name: guard_time_ptbr
+  expectedCode: ~
+  message: "Seu código foi enviado às 14:35 de 01.11.2026"
+
+- name: fallback_code_block_below
+  expectedCode: "709214"
+  message: |-
+    Your security code is below. Do not share it with anyone.
+
+    709214
+
+    It expires in 10 minutes.
