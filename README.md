@@ -50,8 +50,10 @@ stages:
 
 ## Privacy
 
-OTPilot has no network permission. Codes are processed in memory and
-never stored or transmitted.
+OTPilot has no network permission, so nothing it reads ever leaves your
+device. Detected codes are kept in a local history on the device; in
+Settings you can turn the history off, or have codes replaced with zeros
+before they are saved.
 
 ## License
 
