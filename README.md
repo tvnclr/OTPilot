@@ -6,6 +6,19 @@ OTPilot watches incoming SMS and notifications, finds the verification code,
 and puts it on your clipboard before you even open the message.
 No internet permission. Nothing leaves your device.
 
+## Screenshots
+
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="200" alt="Home" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="200" alt="Detection test" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="200" alt="History detail" />
+</p>
+<p align="center">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="200" alt="Settings" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="200" alt="Permissions" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="200" alt="About" />
+</p>
+
 ## Why OTPilot
 
 - **Root-aware.** On rooted devices, OTPilot grants itself access to the
@@ -27,6 +40,7 @@ stages:
 - [x] Rebrand and real-world regression corpus
 - [x] Root-aware permission handling and status warnings
 - [x] Context fallback extraction
+- [x] New interface (Flightdeck UI): light, dark and AMOLED themes, 8 accent colors or Material You
 
 ## Requirements
 
