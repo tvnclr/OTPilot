@@ -200,6 +200,8 @@ fun HomeScreen(onNavigateToRoute: (String, Boolean, Boolean) -> Unit, vm: OtpHom
           FdNote(stringResource(R.string.otp_last_code_empty))
         } else {
           val code = remember(last.text) { CodeExtractor().getCode(last.text) ?: last.text }
+          // "Replace code in history" stores the code as zeros: don't show it as if it were real
+          val masked = settings.shouldReplaceCodeInHistory && code.isNotEmpty() && code.all { it == '0' }
           val app = remember(last.packageName) { getAppInfo(context, last.packageName) }
           val copied = stringResource(R.string.code_copied_to_clipboard)
           Column(
@@ -209,7 +211,13 @@ fun HomeScreen(onNavigateToRoute: (String, Boolean, Boolean) -> Unit, vm: OtpHom
                   ),
               verticalArrangement = Arrangement.spacedBy(FdSpace.xs),
           ) {
-            Text(code, style = FdType.code, color = Fd.colors.accent, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Text(
+                if (masked) "\u2022".repeat(code.length) else code,
+                style = FdType.code,
+                color = if (masked) Fd.colors.textSecondary else Fd.colors.accent,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
             Text(
                 app.appLabel + " · " + DateUtils.getRelativeTimeSpanString(last.createdAt.time),
                 style = FdType.caption,
@@ -218,6 +226,10 @@ fun HomeScreen(onNavigateToRoute: (String, Boolean, Boolean) -> Unit, vm: OtpHom
                 overflow = TextOverflow.Ellipsis,
             )
           }
+          if (masked) {
+            FdDivider(inset = false)
+            FdNote(stringResource(R.string.otp_code_masked))
+          } else {
           FdDivider(inset = false)
           FdRow(
               title = stringResource(R.string.otp_tap_to_copy),
@@ -229,6 +241,7 @@ fun HomeScreen(onNavigateToRoute: (String, Boolean, Boolean) -> Unit, vm: OtpHom
                 }
               },
           )
+          }
         }
       }
     }

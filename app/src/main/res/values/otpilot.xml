@@ -41,6 +41,7 @@
   <string name="otp_last_code">Last code</string>
   <string name="otp_last_code_empty">No codes yet. They show up here once detected.</string>
   <string name="otp_tap_to_copy">Tap to copy</string>
+  <string name="otp_code_masked">The code is hidden because \"Replace code in history\" is on (Settings → History).</string>
   <string name="otp_quick_actions">Quick actions</string>
   <string name="otp_send_test">Send test</string>
   <string name="otp_more">More</string>

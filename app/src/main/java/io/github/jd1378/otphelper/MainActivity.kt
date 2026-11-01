@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
   @Inject lateinit var deepLinkHandler: DeepLinkHandler
 
   companion object {
-    const val scale = 1.15f
+    const val scale = 1.0f // OTPilot: respect the system font size (upstream: 1.15f)
   }
 
   override fun attachBaseContext(newBase: Context) {
