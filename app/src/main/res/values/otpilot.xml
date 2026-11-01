@@ -98,6 +98,7 @@
   <string name="otp_phrase_add">Add phrase</string>
   <string name="otp_phrase_invalid">This phrase isn\'t a valid regex for this list.</string>
   <string name="otp_test_input">Message to test</string>
+  <string name="otp_test_placeholder">Paste or type a message here</string>
   <string name="otp_test_result">Result</string>
   <string name="otp_test_none">No code detected</string>
   <string name="otp_test_ignored">Ignored because of the phrase "%1$s"</string>

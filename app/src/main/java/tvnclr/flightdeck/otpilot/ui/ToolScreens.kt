@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
@@ -73,8 +72,8 @@ fun DetectionTestScreen(upPress: () -> Unit, vm: DetectionTestViewModel) {
 
   FdPage(title = stringResource(R.string.detection_test), subtitle = stringResource(R.string.detection_test_desc), onBack = upPress) {
     FdSection(stringResource(R.string.otp_test_input), Icons.Rounded.EditNote) {
-      Column(Modifier.padding(FdSpace.m).imePadding()) {
-        FdTextField(content, { content = it }, placeholder = stringResource(R.string.detection_test_empty_hint), singleLine = false, minHeight = 140)
+      Column(Modifier.padding(FdSpace.m)) {
+        FdTextField(content, { content = it }, placeholder = stringResource(R.string.otp_test_placeholder), singleLine = false, minHeight = 140)
       }
     }
 

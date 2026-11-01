@@ -103,7 +103,7 @@ fun PermissionsScreen(
             }
           } else null,
   ) {
-    Text(stringResource(R.string.permissions_desc), style = FdType.body, color = Fd.colors.textSecondary)
+    Text(stringResource(R.string.permissions_desc), style = FdType.body, color = Fd.colors.textSecondary, modifier = Modifier.padding(start = FdSpace.xs))
 
     FdSection(stringResource(R.string.otp_perm_required), Icons.Rounded.VerifiedUser) {
       PermRow(

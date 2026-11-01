@@ -1,6 +1,16 @@
 package tvnclr.flightdeck.otpilot.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Icon
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -34,12 +44,10 @@ import tvnclr.flightdeck.ui.FdCard
 import tvnclr.flightdeck.ui.FdConfirmDialog
 import tvnclr.flightdeck.ui.FdDivider
 import tvnclr.flightdeck.ui.FdEmptyState
-import tvnclr.flightdeck.ui.FdIconButton
 import tvnclr.flightdeck.ui.FdInputDialog
 import tvnclr.flightdeck.ui.FdListPage
 import tvnclr.flightdeck.ui.FdMenuItem
 import tvnclr.flightdeck.ui.FdOverflowMenu
-import tvnclr.flightdeck.ui.FdRow
 import tvnclr.flightdeck.ui.FdSpace
 import tvnclr.flightdeck.ui.FdType
 
@@ -132,10 +140,7 @@ private fun PhraseListScreen(
         FdCard {
           phrases.forEachIndexed { i, phrase ->
             if (i > 0) FdDivider(inset = false)
-            FdRow(
-                phrase,
-                trailing = { FdIconButton(Icons.Rounded.Close, stringResource(R.string.delete), { onDelete(i) }) },
-            )
+            PhraseRow(phrase, stringResource(R.string.delete)) { onDelete(i) }
           }
         }
       }
@@ -208,4 +213,22 @@ fun CleanupPhrasesScreen(upPress: () -> Unit, vm: CleanupPhrasesViewModel) {
       onDelete = vm::deletePhrase,
       upPress = upPress,
   )
+}
+
+/** Compact row for a regex phrase: monospace text and a small delete button. */
+@Composable
+private fun PhraseRow(phrase: String, deleteLabel: String, onDelete: () -> Unit) {
+  val c = Fd.colors
+  Row(
+      Modifier.fillMaxWidth().heightIn(min = 52.dp).padding(start = FdSpace.l, end = FdSpace.xs),
+      verticalAlignment = Alignment.CenterVertically,
+  ) {
+    Text(phrase, style = FdType.mono.copy(fontSize = FdType.body.fontSize), color = c.textPrimary, modifier = Modifier.weight(1f).padding(vertical = FdSpace.s))
+    Box(
+        Modifier.size(48.dp).clip(CircleShape).clickable(onClickLabel = deleteLabel, onClick = onDelete),
+        contentAlignment = Alignment.Center,
+    ) {
+      Icon(Icons.Rounded.Close, deleteLabel, tint = c.textSecondary, modifier = Modifier.size(20.dp))
+    }
+  }
 }

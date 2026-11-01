@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -138,7 +139,7 @@ fun FdPage(
 ) {
   val scroll = rememberScrollState()
   FdBackground {
-    Column(Modifier.fillMaxSize()) {
+    Column(Modifier.fillMaxSize().imePadding()) {
       FdTopBar(onBack, title, scrolled = scroll.value > 0, showTitle = scroll.value > 160, actions = actions)
       Column(
           Modifier.weight(1f).fillMaxWidth().verticalScroll(scroll).padding(horizontal = FdSpace.page),
@@ -168,7 +169,7 @@ fun FdListPage(
   val scrolled = state.firstVisibleItemIndex > 0 || state.firstVisibleItemScrollOffset > 0
   val showTitle = state.firstVisibleItemIndex > 0 || state.firstVisibleItemScrollOffset > 160
   FdBackground {
-    Column(Modifier.fillMaxSize()) {
+    Column(Modifier.fillMaxSize().imePadding()) {
       FdTopBar(onBack, title, scrolled = scrolled, showTitle = showTitle, actions = actions)
       androidx.compose.foundation.lazy.LazyColumn(
           state = state,
