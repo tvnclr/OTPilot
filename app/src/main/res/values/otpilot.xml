@@ -13,7 +13,7 @@
   <string name="otpilot_sensitive_blocked_text">Android is hiding notifications that contain codes from OTPilot, so they won\'t be copied. Open OTPilot to fix it.</string>
 
   <!-- Flightdeck UI: Home -->
-  <string name="otp_home_subtitle">Your codes, on autopilot.</string>
+  <string name="otp_home_subtitle">Sit back. Your code is inbound.</string>
   <string name="otp_status_engaged">Autopilot engaged</string>
   <string name="otp_status_engaged_desc">Codes are being detected.</string>
   <string name="otp_status_attention">Needs attention</string>
@@ -61,6 +61,14 @@
   <string name="otp_theme_amoled">AMOLED</string>
   <string name="otp_accent">Accent color</string>
   <string name="otp_accent_dynamic">Dynamic (Material You)</string>
+  <string name="otp_bg_title">Background animation</string>
+  <string name="otp_bg_orbs">Orbs</string>
+  <string name="otp_bg_aurora">Aurora</string>
+  <string name="otp_bg_horizon">Horizon</string>
+  <string name="otp_bg_radar">Radar</string>
+  <string name="otp_bg_depth">Depth</string>
+  <string name="otp_bg_plain">None</string>
+  <string name="otp_bg_reduced_motion">Animations are turned off in the system settings, so the background stays still.</string>
   <string name="otp_copying">Copying</string>
   <string name="otp_detection">Detection</string>
   <string name="otp_history_section">History</string>

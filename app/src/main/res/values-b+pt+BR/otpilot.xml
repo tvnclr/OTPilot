@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- OTPilot-specific resources (pt-BR). Every translatable string in values/otpilot.xml must exist here
+     (enforced by OtpilotTranslationsTest). -->
+<resources>
+  <string name="otpilot_sensitive_todo">Ler notificações com código</string>
+  <string name="otpilot_sensitive_grant">Conceder</string>
+  <string name="otpilot_sensitive_desc_allowed">O Android 15+ esconde da maioria dos apps as notificações que contêm códigos. O OTPilot tem acesso a elas.</string>
+  <string name="otpilot_sensitive_desc_blocked">O Android 15+ esconde da maioria dos apps as notificações que contêm códigos, e o OTPilot está bloqueado no momento. Com root, toque em Conceder. Sem root, rode estes comandos ADB uma vez:</string>
+  <string name="otpilot_sensitive_desc_unknown">O OTPilot não conseguiu ler esse estado de acesso no sistema. Se os códigos não estiverem sendo copiados, toque em Conceder (root) ou rode estes comandos ADB uma vez:</string>
+  <string name="otpilot_sensitive_grant_failed">Não foi possível conceder o acesso. Verifique se o OTPilot tem permissão no seu gerenciador de root.</string>
+  <string name="otpilot_sensitive_blocked_title">O OTPilot não consegue ver notificações com código</string>
+  <string name="otpilot_sensitive_blocked_text">O Android está escondendo do OTPilot as notificações que contêm códigos, então elas não serão copiadas. Abra o OTPilot para corrigir.</string>
+
+  <!-- Flightdeck UI: Home -->
+  <string name="otp_home_subtitle">Relaxa, seu código está a caminho.</string>
+  <string name="otp_status_engaged">Piloto automático ligado</string>
+  <string name="otp_status_engaged_desc">Os códigos estão sendo detectados.</string>
+  <string name="otp_status_attention">Precisa de atenção</string>
+  <string name="otp_status_attention_desc">Algo abaixo está impedindo a detecção dos códigos.</string>
+  <string name="otp_status_setup">Ainda não configurado</string>
+  <string name="otp_mode">Modo</string>
+  <string name="otp_mode_notifications">Notificações</string>
+  <string name="otp_mode_sms">SMS</string>
+  <string name="otp_mode_none">Não escolhido</string>
+  <string name="otp_notif_access">Acesso às notificações</string>
+  <string name="otp_sms_access">Acesso ao SMS</string>
+  <string name="otp_code_notifs">Notificações com código</string>
+  <string name="otp_background">Segundo plano</string>
+  <string name="otp_post_notifs">Notificações do app</string>
+  <string name="otp_ok">OK</string>
+  <string name="otp_granted">Concedido</string>
+  <string name="otp_missing">Faltando</string>
+  <string name="otp_allowed">Permitido</string>
+  <string name="otp_blocked">Bloqueado</string>
+  <string name="otp_unknown">Desconhecido</string>
+  <string name="otp_unrestricted">Sem restrição</string>
+  <string name="otp_restricted">Restrito</string>
+  <string name="otp_on">Ligado</string>
+  <string name="otp_off">Desligado</string>
+  <string name="otp_last_code">Último código</string>
+  <string name="otp_last_code_empty">Nenhum código ainda. Eles aparecem aqui assim que forem detectados.</string>
+  <string name="otp_tap_to_copy">Toque para copiar</string>
+  <string name="otp_code_masked">O código está oculto porque \"Substituir o código no histórico\" está ligado (Configurações → Histórico).</string>
+  <string name="otp_quick_actions">Ações rápidas</string>
+  <string name="otp_send_test">Enviar teste</string>
+  <string name="otp_more">Mais</string>
+  <string name="otp_history_desc">Códigos detectados até agora</string>
+  <string name="otp_ignored_desc">Apps e notificações que o OTPilot ignora</string>
+  <string name="otp_settings_desc">Cópia, detecção, aparência</string>
+  <string name="otp_about_desc">Versão, licença, código-fonte</string>
+  <string name="otp_auto_copy_off_hint">A cópia automática está desligada: os códigos aparecem numa notificação com um botão de copiar.</string>
+
+  <!-- Flightdeck UI: Settings -->
+  <string name="otp_settings_subtitle">Ajuste como o OTPilot funciona.</string>
+  <string name="otp_appearance">Aparência</string>
+  <string name="otp_theme">Tema</string>
+  <string name="otp_theme_system">Sistema</string>
+  <string name="otp_theme_light">Claro</string>
+  <string name="otp_theme_dark">Escuro</string>
+  <string name="otp_theme_amoled">AMOLED</string>
+  <string name="otp_accent">Cor de destaque</string>
+  <string name="otp_accent_dynamic">Dinâmica (Material You)</string>
+  <string name="otp_bg_title">Animação de fundo</string>
+  <string name="otp_bg_orbs">Órbitas</string>
+  <string name="otp_bg_aurora">Aurora</string>
+  <string name="otp_bg_horizon">Horizonte</string>
+  <string name="otp_bg_radar">Radar</string>
+  <string name="otp_bg_depth">Profundidade</string>
+  <string name="otp_bg_plain">Nenhuma</string>
+  <string name="otp_bg_reduced_motion">As animações estão desligadas nas configurações do sistema, então o fundo fica parado.</string>
+  <string name="otp_copying">Cópia</string>
+  <string name="otp_detection">Detecção</string>
+  <string name="otp_history_section">Histórico</string>
+  <string name="otp_notif_actions">Ações da notificação</string>
+  <string name="otp_integrations">Integrações</string>
+  <string name="otp_general">Geral</string>
+  <string name="otp_sensitive_desc">Palavras que indicam que a mensagem tem um código</string>
+  <string name="otp_ignored_phrases_desc">Mensagens com estas palavras nunca são copiadas</string>
+  <string name="otp_cleanup_desc">Removidas antes da detecção, para corrigir códigos errados</string>
+  <string name="otp_detection_test_desc">Cole uma mensagem e veja o que é detectado</string>
+  <string name="otp_intent_action">Ação do intent</string>
+  <string name="otp_copy">Copiar</string>
+
+  <!-- Flightdeck UI: other screens -->
+  <string name="otp_mode_subtitle">Como o OTPilot recebe seus códigos.</string>
+  <string name="otp_mode_android15_title">Sobre o Android 15 e mais recentes</string>
+  <string name="otp_mode_unavailable">Indisponível nesta versão</string>
+  <string name="otp_perm_subtitle">O que o OTPilot precisa para funcionar direito.</string>
+  <string name="otp_perm_required">Obrigatórias</string>
+  <string name="otp_perm_background">Segundo plano</string>
+  <string name="otp_perm_code_notifs">Notificações com código (Android 15+)</string>
+  <string name="otp_perm_device">Específicas do aparelho</string>
+  <string name="otp_perm_manual">Sem root, rode estes comandos a partir de um computador:</string>
+  <string name="otp_setup_step">Passo %1$d de %2$d</string>
+  <string name="otp_history_subtitle">Códigos detectados pelo OTPilot, do mais recente ao mais antigo.</string>
+  <string name="otp_history_disabled">O histórico está desligado nas Configurações.</string>
+  <string name="otp_detail_message">Mensagem</string>
+  <string name="otp_detail_ignore">Ignorar</string>
+  <string name="otp_detail_ignore_desc">Itens ignorados passam a ser pulados. Dá para desfazer na Lista de Ignorados.</string>
+  <string name="otp_detail_code">Código detectado</string>
+  <string name="otp_detail_legend">Palavra-chave em amarelo, código na cor de destaque.</string>
+  <string name="otp_ignored_subtitle">Apps, remetentes e notificações que o OTPilot ignora.</string>
+  <string name="otp_ignored_remove">Remover</string>
+  <string name="otp_phrases_count">%1$d frases</string>
+  <string name="otp_phrase_add">Adicionar frase</string>
+  <string name="otp_phrase_invalid">Esta frase não é um regex válido para esta lista.</string>
+  <string name="otp_test_input">Mensagem para testar</string>
+  <string name="otp_test_placeholder">Cole ou digite uma mensagem aqui</string>
+  <string name="otp_test_result">Resultado</string>
+  <string name="otp_test_none">Nenhum código detectado</string>
+  <string name="otp_test_ignored">Ignorada por causa da frase \"%1$s\"</string>
+  <string name="otp_test_after_cleanup">Texto após a limpeza</string>
+  <string name="otp_language_subtitle">O idioma do app, independente do sistema.</string>
+  <string name="otp_about_tagline">Códigos de verificação no piloto automático.</string>
+  <string name="otp_about_fork">Fork do OTP Helper, de jd1378, sob a mesma licença AGPL-3.0.</string>
+  <string name="otp_about_upstream">Projeto original</string>
+  <string name="otp_about_source">Código-fonte</string>
+  <string name="otp_about_privacy">Privacidade</string>
+  <string name="otp_about_license">Licença</string>
+  <string name="otp_about_version">Versão</string>
+</resources>

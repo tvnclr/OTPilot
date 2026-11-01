@@ -153,7 +153,7 @@ data class FdMenuItem(val text: String, val icon: ImageVector? = null, val destr
 
 /** Overflow (⋮) button with a card-styled menu. */
 @Composable
-fun FdOverflowMenu(items: List<FdMenuItem>, contentDescription: String = "Options") {
+fun FdOverflowMenu(items: List<FdMenuItem>, contentDescription: String = androidx.compose.ui.res.stringResource(R.string.fd_options)) {
   val c = Fd.colors
   var open by remember { mutableStateOf(false) }
   Box {
@@ -249,5 +249,34 @@ fun FdCallout(text: String, status: FdStatus = FdStatus.WARN, icon: ImageVector 
   ) {
     Icon(icon, null, tint = color, modifier = Modifier.size(20.dp))
     Text(text, style = FdType.caption, color = Fd.colors.textPrimary, modifier = Modifier.weight(1f))
+  }
+}
+
+/** Single-choice chips that wrap onto several lines (for option sets too big for FdSegmented). */
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
+@Composable
+fun FdChoiceChips(options: List<String>, selected: Int, onSelect: (Int) -> Unit, modifier: Modifier = Modifier) {
+  val c = Fd.colors
+  androidx.compose.foundation.layout.FlowRow(
+      modifier.fillMaxWidth(),
+      horizontalArrangement = Arrangement.spacedBy(FdSpace.s),
+      verticalArrangement = Arrangement.spacedBy(FdSpace.s),
+  ) {
+    options.forEachIndexed { i, label ->
+      val sel = i == selected
+      Surface(
+          onClick = { onSelect(i) },
+          shape = FdShape.pill,
+          color = if (sel) c.accent else c.elevated,
+          border = BorderStroke(1.dp, if (sel) c.accent else c.cardBorder),
+      ) {
+        Text(
+            label,
+            style = FdType.label,
+            color = if (sel) c.onAccent else c.textSecondary,
+            modifier = Modifier.heightIn(min = 36.dp).padding(horizontal = FdSpace.l, vertical = 9.dp),
+        )
+      }
+    }
   }
 }

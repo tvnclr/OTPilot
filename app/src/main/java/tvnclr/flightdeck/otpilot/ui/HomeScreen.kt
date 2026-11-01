@@ -87,7 +87,7 @@ fun HomeScreen(onNavigateToRoute: (String, Boolean, Boolean) -> Unit, vm: OtpHom
         else -> FdStatus.OK
       }
 
-  FdPage(title = stringResource(R.string.otpilot_app_name), subtitle = stringResource(R.string.otp_home_subtitle)) {
+  FdPage(title = stringResource(R.string.otpilot_app_name), subtitle = stringResource(R.string.otp_home_subtitle), hero = true) {
     // ── Status ──
     FdCard {
       Row(

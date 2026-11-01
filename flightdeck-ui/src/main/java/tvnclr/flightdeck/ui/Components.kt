@@ -77,7 +77,7 @@ fun FdTopBar(
         verticalAlignment = Alignment.CenterVertically,
     ) {
       if (onBack != null) {
-        FdIconButton(Icons.AutoMirrored.Rounded.ArrowBack, "Back", onBack)
+        FdIconButton(Icons.AutoMirrored.Rounded.ArrowBack, androidx.compose.ui.res.stringResource(R.string.fd_back), onBack)
       } else {
         Spacer(Modifier.width(FdSpace.s))
       }
@@ -135,10 +135,11 @@ fun FdPage(
     onBack: (() -> Unit)? = null,
     actions: @Composable RowScope.() -> Unit = {},
     bottomBar: (@Composable () -> Unit)? = null,
+    hero: Boolean = false,
     content: @Composable ColumnScope.() -> Unit,
 ) {
   val scroll = rememberScrollState()
-  FdBackground {
+  FdBackground(scroll = { scroll.value.toFloat() }, hero = hero) {
     Column(Modifier.fillMaxSize().imePadding()) {
       FdTopBar(onBack, title, scrolled = scroll.value > 0, showTitle = scroll.value > 160, actions = actions)
       Column(
@@ -168,7 +169,7 @@ fun FdListPage(
 ) {
   val scrolled = state.firstVisibleItemIndex > 0 || state.firstVisibleItemScrollOffset > 0
   val showTitle = state.firstVisibleItemIndex > 0 || state.firstVisibleItemScrollOffset > 160
-  FdBackground {
+  FdBackground(scroll = { state.firstVisibleItemIndex * 300f + state.firstVisibleItemScrollOffset }) {
     Column(Modifier.fillMaxSize().imePadding()) {
       FdTopBar(onBack, title, scrolled = scrolled, showTitle = showTitle, actions = actions)
       androidx.compose.foundation.lazy.LazyColumn(

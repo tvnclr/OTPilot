@@ -132,6 +132,20 @@ fun SettingsScreen(
           FdNote(stringResource(R.string.otp_accent_dynamic))
         }
       }
+      FdDivider(inset = false)
+      Column(Modifier.padding(horizontal = FdSpace.l, vertical = FdSpace.m)) {
+        Text(stringResource(R.string.otp_bg_title), style = FdType.item, color = Fd.colors.textPrimary)
+        androidx.compose.foundation.layout.Spacer(Modifier.padding(top = FdSpace.s))
+        val styles = tvnclr.flightdeck.ui.FdBackgroundStyle.entries
+        tvnclr.flightdeck.ui.FdChoiceChips(
+            options = styles.map { stringResource(bgLabel(it)) },
+            selected = styles.indexOf(theme.background),
+            onSelect = { i -> scope.launch { FdThemePrefs.setBackground(context, styles[i]) } },
+        )
+        if (!android.animation.ValueAnimator.areAnimatorsEnabled() && theme.background != tvnclr.flightdeck.ui.FdBackgroundStyle.PLAIN) {
+          Text(stringResource(R.string.otp_bg_reduced_motion), style = FdType.caption, color = Fd.colors.textSecondary, modifier = Modifier.padding(top = FdSpace.s))
+        }
+      }
     }
 
     // ── Copying ──
@@ -233,3 +247,13 @@ fun SettingsScreen(
     }
   }
 }
+
+private fun bgLabel(style: tvnclr.flightdeck.ui.FdBackgroundStyle): Int =
+    when (style) {
+      tvnclr.flightdeck.ui.FdBackgroundStyle.ORBS -> R.string.otp_bg_orbs
+      tvnclr.flightdeck.ui.FdBackgroundStyle.AURORA -> R.string.otp_bg_aurora
+      tvnclr.flightdeck.ui.FdBackgroundStyle.HORIZON -> R.string.otp_bg_horizon
+      tvnclr.flightdeck.ui.FdBackgroundStyle.RADAR -> R.string.otp_bg_radar
+      tvnclr.flightdeck.ui.FdBackgroundStyle.DEPTH -> R.string.otp_bg_depth
+      tvnclr.flightdeck.ui.FdBackgroundStyle.PLAIN -> R.string.otp_bg_plain
+    }

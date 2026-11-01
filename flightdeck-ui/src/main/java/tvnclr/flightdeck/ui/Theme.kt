@@ -74,7 +74,7 @@ fun FlightdeckTheme(settings: FdThemeSettings = FdThemeSettings(), content: @Com
     }
   }
 
-  CompositionLocalProvider(LocalFdColors provides colors) {
+  CompositionLocalProvider(LocalFdColors provides colors, LocalFdBackgroundStyle provides settings.background) {
     MaterialTheme(colorScheme = scheme, typography = Typography(), content = content)
   }
 }
