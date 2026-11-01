@@ -1,3 +1,4 @@
+import java.util.Properties
 import com.android.build.gradle.api.ApplicationVariant
 import com.android.build.gradle.api.BaseVariantOutput
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
@@ -31,7 +32,7 @@ android {
   val otpilotKeystoreProps = rootProject.file("keystore.properties")
   signingConfigs {
     if (otpilotKeystoreProps.exists()) {
-      val props = java.util.Properties().apply { otpilotKeystoreProps.inputStream().use { load(it) } }
+      val props = Properties().apply { otpilotKeystoreProps.inputStream().use { load(it) } }
       create("otpilot") {
         storeFile = file(props.getProperty("storeFile"))
         storePassword = props.getProperty("storePassword")
