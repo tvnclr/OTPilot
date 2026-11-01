@@ -9,14 +9,14 @@ No internet permission. Nothing leaves your device.
 ## Screenshots
 
 <p align="center">
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="200" alt="Home" />
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="200" alt="Detection test" />
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="200" alt="History detail" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="200" alt="Home: status of everything OTPilot depends on" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="200" alt="History detail: keyword and code highlighted" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="200" alt="Detection test" />
 </p>
 <p align="center">
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="200" alt="Settings" />
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="200" alt="Permissions" />
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="200" alt="About" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="200" alt="Permissions" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="200" alt="Settings: theme, accent color and background animation" />
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="200" alt="Light theme with another accent color" />
 </p>
 
 ## Why OTPilot
