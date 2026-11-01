@@ -134,8 +134,8 @@
   <string name="copy_cleanup_regex">Copy cleanup regex</string>
   <string name="new_cleanup_phrase">New Cleanup Phrase</string>
   <string name="cleanup_phrases_desc">Phrases defined here will be removed from the messages before applying detection logic. You can use this to fix issues with incorrectly detected code.</string>
-  <string name="adb_command_sensitive_notifs" translatable="false">adb shell cmd appops set --user 0 io.github.jd1378.otphelper RECEIVE_SENSITIVE_NOTIFICATIONS allow</string>
-  <string name="adb_command_kill_app" translatable="false">adb shell am force-stop io.github.jd1378.otphelper</string>
+  <string name="adb_command_sensitive_notifs" translatable="false">adb shell cmd appops set --user 0 tvnclr.flightdeck.otpilot RECEIVE_SENSITIVE_NOTIFICATIONS allow</string>
+  <string name="adb_command_kill_app" translatable="false">adb shell am force-stop tvnclr.flightdeck.otpilot</string>
   <string name="sms_origin">Origin</string>
   <string name="ignore_origin">Ignore Origin</string>
   <string name="allow_origin">Allow Origin</string>

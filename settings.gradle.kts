@@ -14,6 +14,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "OtpHelper"
+rootProject.name = "OTPilot"
 
 include(":app")

@@ -1,0 +1,12 @@
+OTPilot
+Copyright (C) 2026 tvnclr
+
+This program is a modified version of "Copy SMS Code - OTP Helper"
+(https://github.com/jd1378/otphelper), Copyright (C) jd1378 and contributors,
+licensed under the GNU Affero General Public License v3.0.
+
+Modified by tvnclr starting 2026-11-01, based on upstream release v1.20.7
+(commit a40b8af). Changes are recorded in this repository's git history.
+
+OTPilot is distributed under the same license, the GNU Affero General Public
+License v3.0. See the LICENSE file for the full text.

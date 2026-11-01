@@ -17,18 +17,33 @@ android {
   compileSdk = 36
 
   defaultConfig {
-    applicationId = "io.github.jd1378.otphelper"
+    applicationId = "tvnclr.flightdeck.otpilot"
     minSdk = 24
     targetSdk = 36
-    versionCode = 55
-    versionName = "1.20.7"
+    versionCode = 1
+    versionName = "0.1.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables { useSupportLibrary = true }
   }
 
+  // OTPilot: release signing comes from keystore.properties (kept out of git)
+  val otpilotKeystoreProps = rootProject.file("keystore.properties")
+  signingConfigs {
+    if (otpilotKeystoreProps.exists()) {
+      val props = java.util.Properties().apply { otpilotKeystoreProps.inputStream().use { load(it) } }
+      create("otpilot") {
+        storeFile = file(props.getProperty("storeFile"))
+        storePassword = props.getProperty("storePassword")
+        keyAlias = props.getProperty("keyAlias")
+        keyPassword = props.getProperty("keyPassword")
+      }
+    }
+  }
+
   buildTypes {
     release {
+      if (otpilotKeystoreProps.exists()) signingConfig = signingConfigs.getByName("otpilot")
       isMinifyEnabled = true
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }

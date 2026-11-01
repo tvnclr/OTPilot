@@ -17,3 +17,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# OTPilot release signing (never commit)
+keystore.properties
+*.jks
+*.keystore

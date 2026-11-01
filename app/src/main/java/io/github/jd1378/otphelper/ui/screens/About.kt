@@ -61,7 +61,7 @@ fun About(upPress: () -> Unit) {
             )
 
             Text(
-                stringResource(R.string.app_name),
+                stringResource(R.string.otpilot_app_name),
                 modifier = Modifier.padding(PaddingValues(10.dp)),
                 fontSize = 28.sp)
 
@@ -101,7 +101,7 @@ fun About(upPress: () -> Unit) {
                             LinkTextData(
                                 text = stringResource(R.string.github),
                                 tag = "github_homepage",
-                                annotation = "https://github.com/jd1378/otphelper",
+                                annotation = "https://github.com/tvnclr/OTPilot",
                                 onClick = { uriHandler.openUriSafely(context, it.item) },
                             ),
                         ),
@@ -117,7 +117,7 @@ fun About(upPress: () -> Unit) {
                           LinkTextData(
                               text = stringResource(R.string.label_privacy_policy),
                               tag = "label_privacy_policy",
-                              annotation = "https://jd1378.github.io/otphelper/privacy-policy",
+                              annotation = "https://github.com/tvnclr/OTPilot#privacy",
                               onClick = { uriHandler.openUriSafely(context, it.item) },
                           ),
                       ),

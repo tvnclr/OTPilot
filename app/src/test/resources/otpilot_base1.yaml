@@ -1,0 +1,114 @@
+# OTPilot regression corpus — BASE 1 (validated).
+# Real-world messages that the extractor already handles correctly.
+# Rule: no change may break any case in this file.
+# One entry per message FORMAT (same sender + same template = one case).
+# Personal data is anonymized and every code is replaced with random digits
+# of the same length. "message" mimics what the app sees in notification mode
+# (EXTRA_TEXT, then EXTRA_BIG_TEXT, joined by newlines; title excluded).
+
+# ── SMS · pt-BR ───────────────────────────────────────────────────────────────
+
+- name: sms_x_ptbr
+  expectedCode: "482915"
+  message: "482915 é seu código para X App."
+
+- name: sms_x_ptbr_short
+  expectedCode: "730264"
+  message: "730264 é seu código para X."
+
+- name: sms_paypal_ptbr
+  expectedCode: "915372"
+  message: "PayPal: 915372 é o código de segurança. Não o compartilhe."
+
+- name: sms_paypal_ptbr_no_accents
+  expectedCode: "208461"
+  message: "PayPal: 208461 é o codigo de seguranÇa. Nao o compartilhe."
+
+- name: sms_nubank_nupay_ptbr
+  expectedCode: "617093"
+  message: "Nubank: 617093 é o código para habilitar pagamentos com o NuPay na Amazon. Não repasse o código para ninguém. Não pedimos códigos por WhatsApp ou telefone."
+
+- name: sms_pagaleve_ptbr
+  expectedCode: "356820"
+  message: "Código Pagaleve: 356820"
+
+- name: sms_hoyoverse_ptbr
+  expectedCode: "741508"
+  message: "[HoYoverse]Seu código de verificação é: 741508 (válido por 10 minutos). Atenção! Não compartilhe esse código com ninguém."
+
+- name: sms_ea_ptbr_no_accents
+  expectedCode: "129647"
+  message: "Seu codigo de seguranca EA e: 129647"
+
+- name: sms_steam_ptbr_abbrev
+  expectedCode: "83172"
+  message: "Steam: use o codigo 83172 p/ desat. ou mover o autenticador movel"
+
+# ── SMS · en ──────────────────────────────────────────────────────────────────
+
+- name: sms_openai_en
+  expectedCode: "564230"
+  message: "Your OpenAI verification code is: 564230"
+
+- name: sms_amazon_en
+  expectedCode: "390847"
+  message: "390847 is your Amazon OTP. Do not share it with anyone."
+
+- name: sms_steam_en
+  expectedCode: "27495"
+  message: "Steam: To disable or move your Mobile Authenticator use code: 27495"
+
+- name: sms_playerauctions_en
+  expectedCode: "861302"
+  message: "PlayerAuctions - Code: 861302. Do not share this code with anyone."
+
+- name: sms_telegram_en_with_link
+  expectedCode: "50619"
+  message: |-
+    Telegram code: 50619
+
+    You can also tap on this link to log in:
+    https://t.me/login/50619
+
+# ── Email (Gmail notification) · en ───────────────────────────────────────────
+
+- name: email_spotify_en
+  expectedCode: "203984"
+  message: |-
+    203984 - Your Spotify login code
+    203984 - Your Spotify login code
+    Hi, Enter this code to continue logging in without a password: 203984 This code is valid for 20 minutes and can only be used once. By entering this code, you will also
+
+- name: email_x_en
+  expectedCode: "657120"
+  message: |-
+    657120 is your X verification code
+    657120 is your X verification code
+    X Confirm your email address Confirm You can use this code as a backup, just in case: 657120 Verification codes expire after two hours. Thanks, X Help | Email security tips X Corp.
+
+- name: email_telegram_access_en
+  expectedCode: "48261"
+  message: |-
+    Your Code - 48261
+    Your Code - 48261
+    Dear user, Your code is: 48261. Use it to access your account. If you didn't request this, simply ignore this message. Yours, The Telegram Team
+
+- name: email_telegram_verify_en
+  expectedCode: "830517"
+  message: "Hello Your code is: 830517. Use it to verify your email for Login. If you didn't request this, simply ignore this message. Yours, The Telegram Team"
+
+# ── Email (Gmail notification) · pt-BR ────────────────────────────────────────
+
+- name: email_microsoft_ptbr
+  expectedCode: "094386"
+  message: |-
+    Seu código de uso único
+    Seu código de uso único
+    Olá user@example.com, Nós recebemos uma solicitação para um código de uso único para a sua conta da Microsoft. Seu código de uso único é: 094386 Insira este código apenas em um site oficial
+
+- name: email_epic_2fa_ptbr
+  expectedCode: "572049"
+  message: |-
+    Seu código de autenticação de dois fatores
+    Seu código de autenticação de dois fatores
+    Seu código de Autenticação de Dois Fatores: 572049 Olá, Alex, Você tentou recentemente fazer login a partir de um novo dispositivo, navegador ou local. Para concluir seu login,

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- OTPilot-specific resources, kept in a separate file to keep upstream merges clean. -->
+<resources>
+  <string name="otpilot_app_name" translatable="false">OTPilot</string>
+</resources>
