@@ -73,4 +73,41 @@
   <string name="otp_detection_test_desc">Paste a message and see what gets detected</string>
   <string name="otp_intent_action">Intent action</string>
   <string name="otp_copy">Copy</string>
+
+  <!-- Flightdeck UI: other screens -->
+  <string name="otp_mode_subtitle">How OTPilot gets your codes.</string>
+  <string name="otp_mode_android15_title">About Android 15 and newer</string>
+  <string name="otp_mode_unavailable">Not available in this build</string>
+  <string name="otp_perm_subtitle">What OTPilot needs to work reliably.</string>
+  <string name="otp_perm_required">Required</string>
+  <string name="otp_perm_background">Background</string>
+  <string name="otp_perm_code_notifs">Code notifications (Android 15+)</string>
+  <string name="otp_perm_device">Device specific</string>
+  <string name="otp_perm_manual">If you don't have root, run these from a computer:</string>
+  <string name="otp_setup_step">Step %1$d of %2$d</string>
+  <string name="otp_history_subtitle">Codes OTPilot detected, newest first.</string>
+  <string name="otp_history_disabled">History is turned off in Settings.</string>
+  <string name="otp_detail_message">Message</string>
+  <string name="otp_detail_ignore">Ignore</string>
+  <string name="otp_detail_ignore_desc">Ignored items are skipped from now on. You can undo it in Ignored list.</string>
+  <string name="otp_detail_code">Detected code</string>
+  <string name="otp_detail_legend">Keyword in yellow, code in the accent color.</string>
+  <string name="otp_ignored_subtitle">Apps, senders and notifications OTPilot skips.</string>
+  <string name="otp_ignored_remove">Remove</string>
+  <string name="otp_phrases_count">%1$d phrases</string>
+  <string name="otp_phrase_add">Add phrase</string>
+  <string name="otp_phrase_invalid">This phrase isn't a valid regex for this list.</string>
+  <string name="otp_test_input">Message to test</string>
+  <string name="otp_test_result">Result</string>
+  <string name="otp_test_none">No code detected</string>
+  <string name="otp_test_ignored">Ignored because of the phrase "%1$s"</string>
+  <string name="otp_test_after_cleanup">Text after cleanup</string>
+  <string name="otp_language_subtitle">The app language, independent from the system.</string>
+  <string name="otp_about_tagline">One-time codes, on autopilot.</string>
+  <string name="otp_about_fork">Fork of OTP Helper by jd1378, under the same AGPL-3.0 license.</string>
+  <string name="otp_about_upstream">Original project</string>
+  <string name="otp_about_source">Source code</string>
+  <string name="otp_about_privacy">Privacy</string>
+  <string name="otp_about_license">License</string>
+  <string name="otp_about_version">Version</string>
 </resources>

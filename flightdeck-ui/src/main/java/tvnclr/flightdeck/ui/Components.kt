@@ -51,21 +51,46 @@ import androidx.compose.ui.unit.dp
 
 // ── Page scaffolding ─────────────────────────────────────────────────────────
 
-/** Top bar: optional round back button and trailing actions. The page title lives in the content. */
+/**
+ * Top bar: optional round back button, a compact title that fades in once the page has scrolled
+ * past its large title, and trailing actions. Gets a solid background + hairline when [scrolled].
+ */
 @Composable
-fun FdTopBar(onBack: (() -> Unit)? = null, actions: @Composable RowScope.() -> Unit = {}) {
-  Row(
-      Modifier.fillMaxWidth()
-          .windowInsetsPadding(WindowInsets.statusBars)
-          .padding(horizontal = FdSpace.s, vertical = FdSpace.xs)
-          .heightIn(min = 56.dp),
-      verticalAlignment = Alignment.CenterVertically,
-  ) {
-    if (onBack != null) {
-      FdIconButton(Icons.AutoMirrored.Rounded.ArrowBack, "Back", onBack)
+fun FdTopBar(
+    onBack: (() -> Unit)? = null,
+    title: String? = null,
+    scrolled: Boolean = false,
+    showTitle: Boolean = scrolled,
+    actions: @Composable RowScope.() -> Unit = {},
+) {
+  val c = Fd.colors
+  val bg by animateColorAsState(if (scrolled) c.background else Color.Transparent, label = "bar-bg")
+  val line by animateColorAsState(if (scrolled) c.cardBorder else Color.Transparent, label = "bar-line")
+  val titleAlpha by androidx.compose.animation.core.animateFloatAsState(if (showTitle && title != null) 1f else 0f, label = "bar-title")
+  Column(Modifier.fillMaxWidth().background(bg)) {
+    Row(
+        Modifier.fillMaxWidth()
+            .windowInsetsPadding(WindowInsets.statusBars)
+            .padding(horizontal = FdSpace.s, vertical = FdSpace.xs)
+            .heightIn(min = 56.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+      if (onBack != null) {
+        FdIconButton(Icons.AutoMirrored.Rounded.ArrowBack, "Back", onBack)
+      } else {
+        Spacer(Modifier.width(FdSpace.s))
+      }
+      Text(
+          title ?: "",
+          style = FdType.title,
+          color = c.textPrimary.copy(alpha = titleAlpha),
+          maxLines = 1,
+          overflow = TextOverflow.Ellipsis,
+          modifier = Modifier.weight(1f).padding(horizontal = FdSpace.s),
+      )
+      actions()
     }
-    Spacer(Modifier.weight(1f))
-    actions()
+    HorizontalDivider(thickness = 1.dp, color = line)
   }
 }
 
@@ -99,8 +124,8 @@ fun FdPageTitle(title: String, subtitle: String? = null, modifier: Modifier = Mo
 }
 
 /**
- * Standard scrolling page: animated background, top bar, large title and a column of sections
- * spaced on the grid. Bottom padding clears the navigation bar.
+ * Standard scrolling page: animated background, scroll-aware top bar, large title and a column of
+ * sections spaced on the grid. [bottomBar] stays pinned above the navigation bar.
  */
 @Composable
 fun FdPage(
@@ -108,21 +133,66 @@ fun FdPage(
     subtitle: String? = null,
     onBack: (() -> Unit)? = null,
     actions: @Composable RowScope.() -> Unit = {},
+    bottomBar: (@Composable () -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit,
 ) {
+  val scroll = rememberScrollState()
   FdBackground {
     Column(Modifier.fillMaxSize()) {
-      FdTopBar(onBack, actions)
+      FdTopBar(onBack, title, scrolled = scroll.value > 0, showTitle = scroll.value > 160, actions = actions)
       Column(
-          Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = FdSpace.page),
+          Modifier.weight(1f).fillMaxWidth().verticalScroll(scroll).padding(horizontal = FdSpace.page),
           verticalArrangement = Arrangement.spacedBy(FdSpace.xl),
       ) {
         FdPageTitle(title, subtitle)
         content()
-        Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.navigationBars))
+        if (bottomBar == null) Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.navigationBars))
         Spacer(Modifier.size(FdSpace.l))
       }
+      if (bottomBar != null) FdBottomBar(bottomBar)
     }
+  }
+}
+
+/** Page whose body is a lazy list (history, phrase lists...). Header items scroll with the list. */
+@Composable
+fun FdListPage(
+    title: String,
+    subtitle: String? = null,
+    onBack: (() -> Unit)? = null,
+    actions: @Composable RowScope.() -> Unit = {},
+    state: androidx.compose.foundation.lazy.LazyListState = androidx.compose.foundation.lazy.rememberLazyListState(),
+    bottomBar: (@Composable () -> Unit)? = null,
+    content: androidx.compose.foundation.lazy.LazyListScope.() -> Unit,
+) {
+  val scrolled = state.firstVisibleItemIndex > 0 || state.firstVisibleItemScrollOffset > 0
+  val showTitle = state.firstVisibleItemIndex > 0 || state.firstVisibleItemScrollOffset > 160
+  FdBackground {
+    Column(Modifier.fillMaxSize()) {
+      FdTopBar(onBack, title, scrolled = scrolled, showTitle = showTitle, actions = actions)
+      androidx.compose.foundation.lazy.LazyColumn(
+          state = state,
+          modifier = Modifier.weight(1f).fillMaxWidth(),
+          contentPadding = PaddingValues(start = FdSpace.page, end = FdSpace.page, bottom = FdSpace.l),
+          verticalArrangement = Arrangement.spacedBy(FdSpace.m),
+      ) {
+        item(key = "fd-title") { FdPageTitle(title, subtitle) }
+        content()
+        if (bottomBar == null) item(key = "fd-nav-space") { Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.navigationBars)) }
+      }
+      if (bottomBar != null) FdBottomBar(bottomBar)
+    }
+  }
+}
+
+/** Pinned bottom area for primary actions (setup flows, add buttons). */
+@Composable
+fun FdBottomBar(content: @Composable () -> Unit) {
+  val c = Fd.colors
+  Column(Modifier.fillMaxWidth().background(c.background)) {
+    HorizontalDivider(thickness = 1.dp, color = c.cardBorder)
+    Box(Modifier.fillMaxWidth().padding(horizontal = FdSpace.page, vertical = FdSpace.m)) { content() }
+    Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.navigationBars))
   }
 }
 

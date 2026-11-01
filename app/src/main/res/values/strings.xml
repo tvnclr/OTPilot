@@ -169,7 +169,7 @@
   <string name="target_package_name">Target Package Name</string>
   <string name="broadcast_target_help">Enter the package name of the app to receive the broadcast. Leaving this blank disables broadcasting for security reasons.</string>
   <string name="intent_action" translatable="false">Intent Action</string>
-  <string name="intent_action_code_detected" translatable="false">io.github.jd1378.otphelper.actions.code_detected</string>
+  <string name="intent_action_code_detected" translatable="false">tvnclr.flightdeck.otpilot.actions.code_detected</string>
   <string name="intent_action_code_detected_help">The detected code will be included in the broadcast extras under the key \"code\".</string>
   <string name="unknown_sender">Unknown sender</string>
   <string name="permissions_reminder_title">Check permissions</string>

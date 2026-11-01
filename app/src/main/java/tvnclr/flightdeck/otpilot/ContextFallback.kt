@@ -35,4 +35,14 @@ object ContextFallback {
         .map { it.groupValues[1] }
         .firstOrNull { !yearLike.matches(it) }
   }
+
+  /** Same as [find], but returns where the code is in [text] (for highlighting). */
+  fun findRange(text: String, keywordEnd: Int): IntRange? {
+    if (keywordEnd < 0 || keywordEnd > text.length) return null
+    return candidate
+        .findAll(text, keywordEnd)
+        .mapNotNull { it.groups[1] }
+        .firstOrNull { !yearLike.matches(it.value) }
+        ?.range
+  }
 }
