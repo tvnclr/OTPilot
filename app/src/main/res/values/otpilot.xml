@@ -83,7 +83,7 @@
   <string name="otp_perm_background">Background</string>
   <string name="otp_perm_code_notifs">Code notifications (Android 15+)</string>
   <string name="otp_perm_device">Device specific</string>
-  <string name="otp_perm_manual">If you don't have root, run these from a computer:</string>
+  <string name="otp_perm_manual">If you don\'t have root, run these from a computer:</string>
   <string name="otp_setup_step">Step %1$d of %2$d</string>
   <string name="otp_history_subtitle">Codes OTPilot detected, newest first.</string>
   <string name="otp_history_disabled">History is turned off in Settings.</string>
@@ -96,7 +96,7 @@
   <string name="otp_ignored_remove">Remove</string>
   <string name="otp_phrases_count">%1$d phrases</string>
   <string name="otp_phrase_add">Add phrase</string>
-  <string name="otp_phrase_invalid">This phrase isn't a valid regex for this list.</string>
+  <string name="otp_phrase_invalid">This phrase isn\'t a valid regex for this list.</string>
   <string name="otp_test_input">Message to test</string>
   <string name="otp_test_result">Result</string>
   <string name="otp_test_none">No code detected</string>
