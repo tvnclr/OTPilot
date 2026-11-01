@@ -21,8 +21,8 @@ android {
     applicationId = "tvnclr.flightdeck.otpilot"
     minSdk = 24
     targetSdk = 36
-    versionCode = 5
-    versionName = "0.5.0"
+    versionCode = 10
+    versionName = "1.0.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables { useSupportLibrary = true }
