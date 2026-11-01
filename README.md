@@ -25,7 +25,7 @@ from upstream and already works; the features above are rolling out in
 stages:
 
 - [x] Rebrand and real-world regression corpus
-- [ ] Root-aware permission handling and status warnings
+- [x] Root-aware permission handling and status warnings
 - [ ] Context fallback extraction
 
 ## Requirements
