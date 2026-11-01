@@ -13,6 +13,7 @@ import androidx.compose.material.icons.rounded.DoneAll
 import androidx.compose.material.icons.rounded.History
 import androidx.compose.material.icons.rounded.Hub
 import androidx.compose.material.icons.rounded.Info
+import androidx.compose.material.icons.rounded.Visibility
 import androidx.compose.material.icons.rounded.Key
 import androidx.compose.material.icons.rounded.Language
 import androidx.compose.material.icons.rounded.ManageSearch
@@ -242,6 +243,17 @@ fun SettingsScreen(
           Icons.Rounded.Language,
           onClick = { go(MainDestinations.LANGUAGE_SELECTION_ROUTE) },
       )
+      if (tvnclr.flightdeck.otpilot.OtpilotPrefs.recentsPreviewSupported) {
+        val preview by remember { tvnclr.flightdeck.otpilot.OtpilotPrefs.recentsPreview(context) }.collectAsState(initial = false)
+        FdDivider()
+        FdSwitchRow(
+            stringResource(R.string.otp_recents_preview),
+            preview,
+            { scope.launch { tvnclr.flightdeck.otpilot.OtpilotPrefs.setRecentsPreview(context, it) } },
+            subtitle = stringResource(R.string.otp_recents_preview_desc),
+            icon = Icons.Rounded.Visibility,
+        )
+      }
       FdDivider()
       FdRow(stringResource(R.string.about), stringResource(R.string.otp_about_desc), Icons.Rounded.Info, onClick = { go(MainDestinations.ABOUT_ROUTE) })
     }

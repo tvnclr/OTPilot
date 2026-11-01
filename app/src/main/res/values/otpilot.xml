@@ -69,6 +69,8 @@
   <string name="otp_bg_depth">Depth</string>
   <string name="otp_bg_plain">None</string>
   <string name="otp_bg_reduced_motion">Animations are turned off in the system settings, so the background stays still.</string>
+  <string name="otp_recents_preview">Show preview in recent apps</string>
+  <string name="otp_recents_preview_desc">Off by default, so codes on screen don\'t show up in the recent apps list. Screenshots work either way.</string>
   <string name="otp_copying">Copying</string>
   <string name="otp_detection">Detection</string>
   <string name="otp_history_section">History</string>

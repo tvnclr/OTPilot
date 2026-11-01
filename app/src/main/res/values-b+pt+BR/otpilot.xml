@@ -68,6 +68,8 @@
   <string name="otp_bg_depth">Profundidade</string>
   <string name="otp_bg_plain">Nenhuma</string>
   <string name="otp_bg_reduced_motion">As animações estão desligadas nas configurações do sistema, então o fundo fica parado.</string>
+  <string name="otp_recents_preview">Mostrar prévia nos apps recentes</string>
+  <string name="otp_recents_preview_desc">Desligado por padrão, para os códigos na tela não aparecerem na lista de apps recentes. As capturas de tela funcionam de qualquer jeito.</string>
   <string name="otp_copying">Cópia</string>
   <string name="otp_detection">Detecção</string>
   <string name="otp_history_section">Histórico</string>

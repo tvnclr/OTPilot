@@ -21,8 +21,8 @@
         android:name=".MainActivity"
         android:exported="true"
         android:launchMode="singleTask"
-        android:theme="@style/Theme.App.Starting"
-        android:excludeFromRecents="true">
+        android:theme="@style/Theme.App.Starting">
+      <!-- OTPilot: shown in recents; the thumbnail is blanked unless enabled in Settings (OtpilotPrefs) -->
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
