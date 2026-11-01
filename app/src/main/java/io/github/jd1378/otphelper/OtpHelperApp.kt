@@ -12,15 +12,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.navigation.compose.NavHost
 import io.github.jd1378.otphelper.ui.navigation.MainDestinations
-import io.github.jd1378.otphelper.ui.navigation.otphelperNavGraph
 import io.github.jd1378.otphelper.ui.navigation.rememberTheNavController
-import io.github.jd1378.otphelper.ui.theme.OtpHelperTheme
+import tvnclr.flightdeck.otpilot.ui.OtpilotTheme
+import tvnclr.flightdeck.otpilot.ui.otpilotNavGraph
 
 @Composable
 fun OtpHelperApp(
     deepLinkHandler: DeepLinkHandler,
 ) {
-  OtpHelperTheme {
+  OtpilotTheme {
     val theNavController = rememberTheNavController()
     val event by deepLinkHandler.event.collectAsState()
 
@@ -61,7 +61,7 @@ fun OtpHelperApp(
           ) + fadeOut(animationSpec = tween(300))
         },
     ) {
-      otphelperNavGraph(
+      otpilotNavGraph(
           upPress = theNavController::upPress,
           onNavigateToRoute = theNavController::navigateToRoute)
     }

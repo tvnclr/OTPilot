@@ -21,8 +21,8 @@ android {
     applicationId = "tvnclr.flightdeck.otpilot"
     minSdk = 24
     targetSdk = 36
-    versionCode = 3
-    versionName = "0.3.0"
+    versionCode = 4
+    versionName = "0.4.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables { useSupportLibrary = true }
@@ -91,6 +91,8 @@ dependencies {
   implementation("androidx.compose.ui:ui-tooling-preview")
   implementation("androidx.compose.material3:material3")
   implementation("androidx.compose.material:material-icons-core")
+  // OTPilot: Flightdeck UI design system
+  implementation(project(":flightdeck-ui"))
   implementation("androidx.datastore:datastore-preferences:1.1.7")
   testImplementation("junit:junit:4.13.2")
   testImplementation("org.yaml:snakeyaml:2.2")

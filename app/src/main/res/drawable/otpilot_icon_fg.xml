@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- OTPilot icon: artificial horizon whose horizon line is a one-time code -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+  <group android:pivotX="54" android:pivotY="54" android:rotation="-12">
+    <group android:name="sky">
+      <clip-path android:pathData="M30,54 a24,24 0 1,1 48,0 a24,24 0 1,1 -48,0"/>
+      <path android:fillColor="#29FFFFFF" android:pathData="M20,20 h68 v30 h-68 z"/>
+    </group>
+    <path android:fillColor="#FFFFFFFF" android:pathData="M40.5,50 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0 M47.5,50 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0 M54.5,50 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0 M61.5,50 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0"/>
+    <path android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:pathData="M28,50 L37,50 M71,50 L80,50"/>
+  </group>
+  <path android:strokeColor="#FFFFFFFF" android:strokeWidth="4" android:pathData="M27,54 a27,27 0 1,1 54,0 a27,27 0 1,1 -54,0"/>
+  <path android:strokeColor="#FF9DB8FF" android:strokeWidth="3.4" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M38,63 H47 L54,69 L61,63 H70"/>
+</vector>

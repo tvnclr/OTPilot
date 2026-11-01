@@ -11,4 +11,65 @@
   <string name="otpilot_sensitive_grant_failed">Could not grant access. Make sure OTPilot is allowed in your root manager.</string>
   <string name="otpilot_sensitive_blocked_title">OTPilot can\'t see code notifications</string>
   <string name="otpilot_sensitive_blocked_text">Android is hiding notifications that contain codes from OTPilot, so they won\'t be copied. Open OTPilot to fix it.</string>
+
+  <!-- Flightdeck UI: Home -->
+  <string name="otp_home_subtitle">Your codes, on autopilot.</string>
+  <string name="otp_status_engaged">Autopilot engaged</string>
+  <string name="otp_status_engaged_desc">Codes are being detected.</string>
+  <string name="otp_status_attention">Needs attention</string>
+  <string name="otp_status_attention_desc">Something below is stopping codes from being detected.</string>
+  <string name="otp_status_setup">Not set up yet</string>
+  <string name="otp_mode">Mode</string>
+  <string name="otp_mode_notifications">Notifications</string>
+  <string name="otp_mode_sms">SMS</string>
+  <string name="otp_mode_none">Not chosen</string>
+  <string name="otp_notif_access">Notification access</string>
+  <string name="otp_sms_access">SMS access</string>
+  <string name="otp_code_notifs">Code notifications</string>
+  <string name="otp_background">Background</string>
+  <string name="otp_post_notifs">App notifications</string>
+  <string name="otp_ok">OK</string>
+  <string name="otp_granted">Granted</string>
+  <string name="otp_missing">Missing</string>
+  <string name="otp_allowed">Allowed</string>
+  <string name="otp_blocked">Blocked</string>
+  <string name="otp_unknown">Unknown</string>
+  <string name="otp_unrestricted">Unrestricted</string>
+  <string name="otp_restricted">Restricted</string>
+  <string name="otp_on">On</string>
+  <string name="otp_off">Off</string>
+  <string name="otp_last_code">Last code</string>
+  <string name="otp_last_code_empty">No codes yet. They show up here once detected.</string>
+  <string name="otp_tap_to_copy">Tap to copy</string>
+  <string name="otp_quick_actions">Quick actions</string>
+  <string name="otp_send_test">Send test</string>
+  <string name="otp_more">More</string>
+  <string name="otp_history_desc">Codes detected so far</string>
+  <string name="otp_ignored_desc">Apps and notifications OTPilot skips</string>
+  <string name="otp_settings_desc">Copying, detection, appearance</string>
+  <string name="otp_about_desc">Version, license, source code</string>
+  <string name="otp_auto_copy_off_hint">Auto copy is off: codes are shown in a notification with a copy button.</string>
+
+  <!-- Flightdeck UI: Settings -->
+  <string name="otp_settings_subtitle">Tune how OTPilot works.</string>
+  <string name="otp_appearance">Appearance</string>
+  <string name="otp_theme">Theme</string>
+  <string name="otp_theme_system">System</string>
+  <string name="otp_theme_light">Light</string>
+  <string name="otp_theme_dark">Dark</string>
+  <string name="otp_theme_amoled">AMOLED</string>
+  <string name="otp_accent">Accent color</string>
+  <string name="otp_accent_dynamic">Dynamic (Material You)</string>
+  <string name="otp_copying">Copying</string>
+  <string name="otp_detection">Detection</string>
+  <string name="otp_history_section">History</string>
+  <string name="otp_notif_actions">Notification actions</string>
+  <string name="otp_integrations">Integrations</string>
+  <string name="otp_general">General</string>
+  <string name="otp_sensitive_desc">Words that mark a message as having a code</string>
+  <string name="otp_ignored_phrases_desc">Messages with these are never copied</string>
+  <string name="otp_cleanup_desc">Removed before detection, to fix wrong codes</string>
+  <string name="otp_detection_test_desc">Paste a message and see what gets detected</string>
+  <string name="otp_intent_action">Intent action</string>
+  <string name="otp_copy">Copy</string>
 </resources>
