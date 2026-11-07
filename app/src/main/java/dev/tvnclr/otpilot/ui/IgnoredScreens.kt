@@ -34,7 +34,7 @@ import io.github.jd1378.otphelper.ui.navigation.MainDestinations
 import io.github.jd1378.otphelper.ui.screens.IgnoredAppDetailViewModel
 import io.github.jd1378.otphelper.ui.screens.IgnoredAppListViewModel
 import io.github.jd1378.otphelper.ui.utils.SkipFirstLaunchedEffect
-import dev.tvnclr.ui.Fd
+import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvCard
 import dev.tvnclr.ui.TvEmptyState
 import dev.tvnclr.ui.TvListPage

@@ -36,7 +36,7 @@ import io.github.jd1378.otphelper.ui.navigation.MainDestinations
 import io.github.jd1378.otphelper.ui.screens.HistoryDetailViewModel
 import io.github.jd1378.otphelper.ui.screens.HistoryViewModel
 import io.github.jd1378.otphelper.ui.utils.SkipFirstLaunchedEffect
-import dev.tvnclr.ui.Fd
+import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvCallout
 import dev.tvnclr.ui.TvCard
 import dev.tvnclr.ui.TvConfirmDialog

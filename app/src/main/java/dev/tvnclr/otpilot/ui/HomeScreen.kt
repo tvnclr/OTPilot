@@ -43,7 +43,7 @@ import io.github.jd1378.otphelper.ui.navigation.MainDestinations
 import io.github.jd1378.otphelper.utils.Clipboard
 import io.github.jd1378.otphelper.utils.CodeExtractor
 import dev.tvnclr.otpilot.SensitiveNotifAccess
-import dev.tvnclr.ui.Fd
+import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvButton
 import dev.tvnclr.ui.TvButtonStyle
 import dev.tvnclr.ui.TvCard

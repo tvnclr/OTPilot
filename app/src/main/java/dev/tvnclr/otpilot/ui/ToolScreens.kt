@@ -31,7 +31,7 @@ import io.github.jd1378.otphelper.R
 import io.github.jd1378.otphelper.ui.screens.DetectionTestViewModel
 import io.github.jd1378.otphelper.ui.screens.LanguageSelectionViewModel
 import kotlinx.coroutines.delay
-import dev.tvnclr.ui.Fd
+import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvCard
 import dev.tvnclr.ui.TvDivider
 import dev.tvnclr.ui.TvEmptyState

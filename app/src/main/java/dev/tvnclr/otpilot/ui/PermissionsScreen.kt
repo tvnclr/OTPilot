@@ -37,7 +37,7 @@ import io.github.jd1378.otphelper.R
 import io.github.jd1378.otphelper.ui.screens.PermissionsViewModel
 import dev.tvnclr.otpilot.SensitiveNotifAccess
 import androidx.compose.material3.Text
-import dev.tvnclr.ui.Fd
+import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvButton
 import dev.tvnclr.ui.TvType
 import dev.tvnclr.ui.TvButtonStyle

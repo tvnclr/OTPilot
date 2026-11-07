@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import io.github.jd1378.otphelper.BuildConfig
 import io.github.jd1378.otphelper.R
 import io.github.jd1378.otphelper.utils.openUriSafely
-import dev.tvnclr.ui.Fd
+import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvCard
 import dev.tvnclr.ui.TvDivider
 import dev.tvnclr.ui.TvNote

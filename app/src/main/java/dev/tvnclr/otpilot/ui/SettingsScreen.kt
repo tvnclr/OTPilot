@@ -49,7 +49,7 @@ import io.github.jd1378.otphelper.ui.screens.SettingsViewModel
 import io.github.jd1378.otphelper.ui.utils.getCurrentLocale
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import dev.tvnclr.ui.Fd
+import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvAccent
 import dev.tvnclr.ui.TvCodeBlock
 import dev.tvnclr.ui.TvColorDots

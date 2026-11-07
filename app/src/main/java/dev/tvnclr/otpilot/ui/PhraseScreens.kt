@@ -37,7 +37,7 @@ import io.github.jd1378.otphelper.ui.screens.SensitivePhrasesViewModel
 import io.github.jd1378.otphelper.utils.Clipboard
 import io.github.jd1378.otphelper.utils.openUriSafely
 import kotlinx.coroutines.flow.MutableStateFlow
-import dev.tvnclr.ui.Fd
+import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvButton
 import dev.tvnclr.ui.TvButtonStyle
 import dev.tvnclr.ui.TvCard

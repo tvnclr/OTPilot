@@ -35,7 +35,7 @@ import io.github.jd1378.otphelper.ui.components.getAppInfo
 import io.github.jd1378.otphelper.utils.CodeExtractor
 import java.util.Date
 import dev.tvnclr.otpilot.ContextFallback
-import dev.tvnclr.ui.Fd
+import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvCard
 import dev.tvnclr.ui.TvShape
 import dev.tvnclr.ui.TvSpace
