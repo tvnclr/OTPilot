@@ -6,19 +6,6 @@ OTPilot watches incoming SMS and notifications, finds the verification code,
 and puts it on your clipboard before you even open the message.
 No internet permission. Nothing leaves your device.
 
-## Screenshots
-
-<p align="center">
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="200" alt="Home: status of everything OTPilot depends on" />
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="200" alt="History detail: keyword and code highlighted" />
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="200" alt="Detection test" />
-</p>
-<p align="center">
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="200" alt="Permissions" />
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="200" alt="Settings: theme, accent color and background animation" />
-  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="200" alt="Light theme with another accent color" />
-</p>
-
 ## Why OTPilot
 
 - **Root-aware.** On rooted devices, OTPilot grants itself access to the
@@ -27,7 +14,10 @@ No internet permission. Nothing leaves your device.
 - **Honest status.** If a permission it depends on is revoked, OTPilot tells
   you, instead of silently failing.
 - **Smarter extraction.** Multi-pass detection: keyword-anchored first,
-  then context fallback for messages where the code is far from the keyword.
+  then a context fallback for messages where the code comes a little after
+  the keyword ("use the verification code below ... 316974"). The fallback
+  only trusts a bare "code" when the words around it make it a sign-in code,
+  so "VS Code" plus a ZIP code in an email footer is not copied.
 - **Regression-tested on real messages.** Every release must pass a growing
   corpus of real-world SMS and email codes (EN, PT-BR, ES).
 
@@ -41,12 +31,25 @@ stages:
 - [x] Root-aware permission handling and status warnings
 - [x] Context fallback extraction
 - [x] New interface (tvnclr-ui): light, dark and AMOLED themes, 8 accent colors or Material You
+- [x] New icon, with a themed (monochrome) version that works in icon packs
 
 ## Requirements
 
-- Android 8.0+
+- Android 7.0+
 - Root (KernelSU/KowSU, Magisk) recommended. Without root, OTPilot still
   works, but Android 15+ will hide some notifications from it.
+
+## Upgrading from 1.0.x
+
+Starting with 1.1.0 the package name is `dev.tvnclr.otpilot` (it was
+`tvnclr.flightdeck.otpilot`). Android treats it as a different app, so 1.1.0
+installs next to 1.0.x instead of updating it:
+
+1. Install 1.1.0 and go through the setup again (permissions, settings).
+2. Uninstall the old OTPilot. Its history and settings are not carried over.
+
+If an automation app (Tasker, MacroDroid...) listens for OTPilot's broadcast,
+the action is now `dev.tvnclr.otpilot.actions.code_detected`.
 
 ## Privacy
 
