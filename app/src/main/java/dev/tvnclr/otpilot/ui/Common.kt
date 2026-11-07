@@ -34,7 +34,6 @@ import io.github.jd1378.otphelper.ui.components.AppImage
 import io.github.jd1378.otphelper.ui.components.getAppInfo
 import io.github.jd1378.otphelper.utils.CodeExtractor
 import java.util.Date
-import dev.tvnclr.otpilot.ContextFallback
 import dev.tvnclr.ui.Tv
 import dev.tvnclr.ui.TvCard
 import dev.tvnclr.ui.TvShape
@@ -117,10 +116,9 @@ fun detect(extractor: CodeExtractor?, text: String?): Detection {
     return Detection(code, phrase, codeRange)
   }
   if (code == null) return Detection(null, null, null)
-  // fallback path: keyword found, code further ahead
-  val keyword = extractor.generalCodeMatcher.find(text)?.groups?.get(1)?.range
-  val from = (keyword?.last ?: -1) + 1
-  return Detection(code, keyword, ContextFallback.findRange(text, from))
+  // fallback path: keyword found, code a little further ahead
+  val hit = extractor.fallbackHit(text)
+  return Detection(code, hit?.keyword, hit?.code)
 }
 
 @Composable

@@ -151,3 +151,17 @@
     709214
 
     It expires in 10 minutes.
+
+# Bare "code" that is not a sign-in code ("VS Code") and a ZIP code ~900 characters later,
+# in the footer. Every GitHub email ends with this address.
+- name: guard_github_footer_zip
+  expectedCode: ~
+  message: |-
+    Your free Copilot access is ready
+    Your free Copilot access is ready
+    Your free Copilot access is ready user, Start here: Install Copilot for your editor (or just sign in with your GitHub account if you use VS Code). Then ask Copilot about the code youre working on. You can use Copilot in these places: IDE CLI Copilot app GitHub ( and GitHub Mobile) Need more ideas? Copy-pasteable prompts for common tasks Whats included: 2,000 code completions every month Copilot Chat, including agent mode, for questions, explanations, and fixes Manage your plan or upgrade Privacy policy • Terms of use • Contact us GitHub, Inc. • 88 Colin P Kelly Jr Street • San Francisco, CA 94107
+
+# Qualified keyword, but the only number is far away (more than ContextFallback.MAX_DISTANCE).
+- name: guard_fallback_distance
+  expectedCode: ~
+  message: "Your verification code was sent to the phone number on file. If you did not ask for it, someone may be trying to get into your account, so change your password and review the devices signed in to it. You can manage all of this in the security page of your account settings. Example Corp, PO Box 48213"

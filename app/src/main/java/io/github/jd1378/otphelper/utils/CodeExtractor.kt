@@ -195,15 +195,25 @@ class CodeExtractor // this comment is to separate parts
         return toEnglishNumbers(foundCode)
       }
 
-      // OTPilot: keyword found but no code next to it -> look further ahead in the text
-      val keywordEnd = results.first().groups[1]?.range?.last?.plus(1) ?: -1
-      ContextFallback.find(cleanStr, keywordEnd)?.let {
-        return toEnglishNumbers(it)
+      // OTPilot: keyword found but no code next to it -> look a little further ahead
+      fallbackHit(cleanStr)?.let {
+        return toEnglishNumbers(it.value)
       }
     }
 
     return null
   }
+
+  /** OTPilot: the context fallback over every keyword the general matcher finds in [str]. */
+  fun fallbackHit(str: String): ContextFallback.Hit? =
+      ContextFallback.locate(
+          str,
+          generalCodeMatcher
+              .findAll(str)
+              .filter { it.groups[3]?.value != null }
+              .mapNotNull { it.groups[1]?.range }
+              .toList(),
+      )
 
   fun getCodeMatch(str: String?): CodeExtractorResult? {
     if (str.isNullOrEmpty() || sensitivePhrases.isEmpty()) return null
