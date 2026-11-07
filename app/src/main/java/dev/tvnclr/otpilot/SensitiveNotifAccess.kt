@@ -35,6 +35,20 @@ object SensitiveNotifAccess {
     UNKNOWN,
   }
 
+  /** Outcome of [grantWithRoot]. */
+  enum class GrantResult {
+    GRANTED,
+    /**
+     * `su` could not even be started: the device is not rooted, or the root manager hides `su`
+     * from apps it has not allowed yet (KernelSU and its forks never show a prompt).
+     */
+    NO_SU,
+    /** `su` ran but refused or failed (e.g. "Deny" on the Magisk prompt), or Android kept the block. */
+    FAILED,
+  }
+
+  private enum class SuResult { OK, NO_SU, FAILED }
+
   fun isRestricted(): Boolean = Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM
 
   fun state(context: Context): State {
@@ -49,14 +63,18 @@ object SensitiveNotifAccess {
     }
   }
 
-  /** Grants the app-op to ourselves through `su`. Returns true if it is allowed afterwards. */
-  fun grantWithRoot(context: Context): Boolean {
-    if (!isRestricted()) return true
+  /** Grants the app-op to ourselves through `su`. */
+  fun grantWithRoot(context: Context): GrantResult {
+    if (!isRestricted()) return GrantResult.GRANTED
     val user = Process.myUid() / 100_000
-    val ok = runAsRoot("cmd appops set --user $user ${context.packageName} $OP_NAME allow")
+    val su = runAsRoot("cmd appops set --user $user ${context.packageName} $OP_NAME allow")
     val after = state(context)
-    AppLogger.i(TAG, "grantWithRoot: su=$ok, state=$after")
-    return after == State.ALLOWED || (ok && after == State.UNKNOWN)
+    AppLogger.i(TAG, "grantWithRoot: su=$su, state=$after")
+    return when {
+      after == State.ALLOWED || (su == SuResult.OK && after == State.UNKNOWN) -> GrantResult.GRANTED
+      su == SuResult.NO_SU -> GrantResult.NO_SU
+      else -> GrantResult.FAILED
+    }
   }
 
   /**
@@ -69,7 +87,7 @@ object SensitiveNotifAccess {
       cancelBlockedNotif(context)
       return current
     }
-    if (grantWithRoot(context)) {
+    if (grantWithRoot(context) == GrantResult.GRANTED) {
       cancelBlockedNotif(context)
       return State.ALLOWED
     }
@@ -78,20 +96,26 @@ object SensitiveNotifAccess {
   }
 
   @SuppressLint("NewApi") // only reached on Android 15+ (see isRestricted)
-  private fun runAsRoot(command: String): Boolean {
+  private fun runAsRoot(command: String): SuResult {
+    val process =
+        try {
+          ProcessBuilder("su", "-c", command).redirectErrorStream(true).start()
+        } catch (e: Throwable) {
+          AppLogger.w(TAG, "su not available: ${e.message}")
+          return SuResult.NO_SU
+        }
     return try {
-      val process = ProcessBuilder("su", "-c", command).redirectErrorStream(true).start()
       if (!process.waitFor(20, TimeUnit.SECONDS)) {
         process.destroy()
         AppLogger.w(TAG, "su timed out")
-        return false
+        return SuResult.FAILED
       }
       val output = process.inputStream.bufferedReader().readText().trim()
       if (output.isNotEmpty()) AppLogger.d(TAG, "su output: $output")
-      process.exitValue() == 0
+      if (process.exitValue() == 0) SuResult.OK else SuResult.FAILED
     } catch (e: Throwable) {
-      AppLogger.w(TAG, "su not available: ${e.message}")
-      false
+      AppLogger.w(TAG, "su failed: ${e.message}")
+      SuResult.FAILED
     }
   }
 

@@ -18,6 +18,10 @@
       android:name="android.permission.QUERY_ALL_PACKAGES"
       tools:ignore="QueryAllPackagesPermission" />
 
+  <!-- OTPilot: lets "Remain open" show the system dialog instead of the full battery list. -->
+  <!-- Normal flavor only: Google Play restricts this permission. -->
+  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
   <queries>
     <intent>
       <action android:name="android.provider.Telephony.SMS_DELIVER" />

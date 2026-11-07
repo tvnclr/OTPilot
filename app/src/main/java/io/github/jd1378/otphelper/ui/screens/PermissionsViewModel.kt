@@ -1,8 +1,11 @@
 package io.github.jd1378.otphelper.ui.screens
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
@@ -66,12 +69,17 @@ constructor(
   // OTPilot: real state of the Android 15+ sensitive-notification access
   private val _sensitiveNotifState = MutableStateFlow(SensitiveNotifAccess.State.NOT_NEEDED)
   val sensitiveNotifState: StateFlow<SensitiveNotifAccess.State> = _sensitiveNotifState
+  private val _sensitiveGrantResult = MutableStateFlow<SensitiveNotifAccess.GrantResult?>(null)
+  /** Last Grant outcome; null until Grant is tapped. */
+  val sensitiveGrantResult: StateFlow<SensitiveNotifAccess.GrantResult?> = _sensitiveGrantResult
   private val _sensitiveGrantFailed = MutableStateFlow(false)
   val sensitiveGrantFailed: StateFlow<Boolean> = _sensitiveGrantFailed
 
   fun onGrantSensitiveNotifsPressed(context: Context) {
     viewModelScope.launch {
-      val ok = withContext(Dispatchers.IO) { SensitiveNotifAccess.grantWithRoot(context) }
+      val result = withContext(Dispatchers.IO) { SensitiveNotifAccess.grantWithRoot(context) }
+      val ok = result == SensitiveNotifAccess.GrantResult.GRANTED
+      _sensitiveGrantResult.update { result }
       _sensitiveGrantFailed.update { !ok }
       _sensitiveNotifState.update { SensitiveNotifAccess.state(context) }
       if (ok) MyWorkManager.rebindListeners(context, true)
@@ -187,9 +195,22 @@ constructor(
     SettingsHelper.openNotificationListenerSettings(context)
   }
 
+  // OTPilot: ask with the system "stop optimizing battery usage?" dialog when the build declares
+  // REQUEST_IGNORE_BATTERY_OPTIMIZATIONS (normal flavor). Otherwise (play flavor, or a ROM without
+  // the dialog) open the full battery optimization list as before.
+  @SuppressLint("BatteryLife")
   fun onOpenBatteryOptimizationsPressed(context: Context) {
-    val intent = Intent().setAction(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
-    context.startActivity(intent)
+    val pkg = context.packageName
+    val power = context.getSystemService(Context.POWER_SERVICE) as PowerManager
+    val canAsk =
+        !power.isIgnoringBatteryOptimizations(pkg) &&
+            context.checkSelfPermission(Manifest.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS) ==
+                PackageManager.PERMISSION_GRANTED
+    if (canAsk) {
+      val ask = Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, Uri.parse("package:$pkg"))
+      if (runCatching { context.startActivity(ask) }.isSuccess) return
+    }
+    context.startActivity(Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS))
   }
 
   fun onOpenAutostartPressed(context: Context) {

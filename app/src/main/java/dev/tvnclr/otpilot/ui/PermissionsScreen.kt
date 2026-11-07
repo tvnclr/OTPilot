@@ -62,7 +62,7 @@ fun PermissionsScreen(
 ) {
   val ui by vm.uiState.collectAsStateWithLifecycle()
   val sensitive by vm.sensitiveNotifState.collectAsStateWithLifecycle()
-  val sensitiveFailed by vm.sensitiveGrantFailed.collectAsStateWithLifecycle()
+  val grantResult by vm.sensitiveGrantResult.collectAsStateWithLifecycle()
   val context = LocalContext.current
   val lifecycle = LocalLifecycleOwner.current.lifecycle
   val lifecycleState by lifecycle.currentStateFlow.collectAsStateWithLifecycle()
@@ -154,7 +154,11 @@ fun PermissionsScreen(
               Modifier.fillMaxWidth().padding(start = TvSpace.l, end = TvSpace.l, bottom = TvSpace.l),
               verticalArrangement = Arrangement.spacedBy(TvSpace.s),
           ) {
-            if (sensitiveFailed) TvCallout(stringResource(R.string.otpilot_sensitive_grant_failed))
+            when (grantResult) {
+              SensitiveNotifAccess.GrantResult.NO_SU -> TvCallout(stringResource(R.string.otpilot_sensitive_grant_no_su))
+              SensitiveNotifAccess.GrantResult.FAILED -> TvCallout(stringResource(R.string.otpilot_sensitive_grant_failed))
+              else -> {}
+            }
             Text(stringResource(R.string.otp_perm_manual), style = TvType.caption, color = Tv.colors.textSecondary)
             TvCodeBlock(stringResource(R.string.adb_command_sensitive_notifs))
             TvCodeBlock(stringResource(R.string.adb_command_kill_app))

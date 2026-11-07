@@ -5,9 +5,10 @@
   <string name="otpilot_sensitive_todo">Ler notificações com código</string>
   <string name="otpilot_sensitive_grant">Conceder</string>
   <string name="otpilot_sensitive_desc_allowed">O Android 15+ esconde da maioria dos apps as notificações que contêm códigos. O OTPilot tem acesso a elas.</string>
-  <string name="otpilot_sensitive_desc_blocked">O Android 15+ esconde da maioria dos apps as notificações que contêm códigos, e o OTPilot está bloqueado no momento. Com root, toque em Conceder. Sem root, rode estes comandos ADB uma vez:</string>
-  <string name="otpilot_sensitive_desc_unknown">O OTPilot não conseguiu ler esse estado de acesso no sistema. Se os códigos não estiverem sendo copiados, toque em Conceder (root) ou rode estes comandos ADB uma vez:</string>
-  <string name="otpilot_sensitive_grant_failed">Não foi possível conceder o acesso. Verifique se o OTPilot tem permissão no seu gerenciador de root.</string>
+  <string name="otpilot_sensitive_desc_blocked">O Android 15+ esconde da maioria dos apps as notificações que contêm códigos, e o OTPilot está bloqueado no momento. Com root: no KernelSU (e forks como KowSU ou SukiSU), libere primeiro o OTPilot na lista de Superusuário do gerenciador e depois toque em Conceder; no Magisk, toque em Conceder e aceite o pedido. Sem root, rode estes comandos ADB uma vez:</string>
+  <string name="otpilot_sensitive_desc_unknown">O OTPilot não conseguiu ler esse estado de acesso no sistema. Se os códigos não estiverem sendo copiados, toque em Conceder (com root; no KernelSU e nos forks, libere o OTPilot no gerenciador antes) ou rode estes comandos ADB uma vez:</string>
+  <string name="otpilot_sensitive_grant_failed">O root não concedeu o acesso. Verifique se o OTPilot tem permissão no seu gerenciador de root (no Magisk, aceite o pedido) e toque em Conceder de novo.</string>
+  <string name="otpilot_sensitive_grant_no_su">O OTPilot não tem acesso root. O KernelSU e os forks nunca mostram pedido: libere o OTPilot na lista de Superusuário do gerenciador e toque em Conceder de novo. Se o aparelho não tiver root, use os comandos ADB abaixo.</string>
   <string name="otpilot_sensitive_blocked_title">O OTPilot não consegue ver notificações com código</string>
   <string name="otpilot_sensitive_blocked_text">O Android está escondendo do OTPilot as notificações que contêm códigos, então elas não serão copiadas. Abra o OTPilot para corrigir.</string>
 
