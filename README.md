@@ -1,5 +1,7 @@
 # OTPilot
 
+<p align="center"><img src="fastlane/metadata/android/en-US/images/featureGraphic.png" width="720" alt="OTPilot" /></p>
+
 Your one-time codes, on autopilot.
 
 OTPilot watches incoming SMS and notifications, finds the verification code,
