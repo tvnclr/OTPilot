@@ -13,8 +13,8 @@ import androidx.compose.runtime.getValue
 import androidx.navigation.compose.NavHost
 import io.github.jd1378.otphelper.ui.navigation.MainDestinations
 import io.github.jd1378.otphelper.ui.navigation.rememberTheNavController
-import tvnclr.flightdeck.otpilot.ui.OtpilotTheme
-import tvnclr.flightdeck.otpilot.ui.otpilotNavGraph
+import dev.tvnclr.otpilot.ui.OtpilotTheme
+import dev.tvnclr.otpilot.ui.otpilotNavGraph
 
 @Composable
 fun OtpHelperApp(

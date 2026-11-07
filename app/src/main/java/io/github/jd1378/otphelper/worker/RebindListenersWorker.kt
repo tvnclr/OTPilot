@@ -15,7 +15,7 @@ import io.github.jd1378.otphelper.SmsListener.Companion.hasSmsPermission
 import io.github.jd1378.otphelper.repository.UserSettingsRepository
 import io.github.jd1378.otphelper.utils.AppLogger
 import io.github.jd1378.otphelper.utils.NotificationHelper
-import tvnclr.flightdeck.otpilot.SensitiveNotifAccess
+import dev.tvnclr.otpilot.SensitiveNotifAccess
 
 const val rebindListenersWorkName = "rebind_listeners_work"
 

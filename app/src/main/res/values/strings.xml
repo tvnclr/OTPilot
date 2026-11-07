@@ -134,8 +134,8 @@
   <string name="copy_cleanup_regex">Copy cleanup regex</string>
   <string name="new_cleanup_phrase">New Cleanup Phrase</string>
   <string name="cleanup_phrases_desc">Phrases defined here will be removed from the messages before applying detection logic. You can use this to fix issues with incorrectly detected code.</string>
-  <string name="adb_command_sensitive_notifs" translatable="false">adb shell cmd appops set --user 0 tvnclr.flightdeck.otpilot RECEIVE_SENSITIVE_NOTIFICATIONS allow</string>
-  <string name="adb_command_kill_app" translatable="false">adb shell am force-stop tvnclr.flightdeck.otpilot</string>
+  <string name="adb_command_sensitive_notifs" translatable="false">adb shell cmd appops set --user 0 dev.tvnclr.otpilot RECEIVE_SENSITIVE_NOTIFICATIONS allow</string>
+  <string name="adb_command_kill_app" translatable="false">adb shell am force-stop dev.tvnclr.otpilot</string>
   <string name="sms_origin">Origin</string>
   <string name="ignore_origin">Ignore Origin</string>
   <string name="allow_origin">Allow Origin</string>
@@ -169,7 +169,7 @@
   <string name="target_package_name">Target Package Name</string>
   <string name="broadcast_target_help">Enter the package name of the app to receive the broadcast. Leaving this blank disables broadcasting for security reasons.</string>
   <string name="intent_action" translatable="false">Intent Action</string>
-  <string name="intent_action_code_detected" translatable="false">tvnclr.flightdeck.otpilot.actions.code_detected</string>
+  <string name="intent_action_code_detected" translatable="false">dev.tvnclr.otpilot.actions.code_detected</string>
   <string name="intent_action_code_detected_help">The detected code will be included in the broadcast extras under the key \"code\".</string>
   <string name="unknown_sender">Unknown sender</string>
   <string name="permissions_reminder_title">Check permissions</string>

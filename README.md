@@ -40,7 +40,7 @@ stages:
 - [x] Rebrand and real-world regression corpus
 - [x] Root-aware permission handling and status warnings
 - [x] Context fallback extraction
-- [x] New interface (Flightdeck UI): light, dark and AMOLED themes, 8 accent colors or Material You
+- [x] New interface (tvnclr-ui): light, dark and AMOLED themes, 8 accent colors or Material You
 
 ## Requirements
 

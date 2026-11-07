@@ -29,7 +29,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import tvnclr.flightdeck.otpilot.SensitiveNotifAccess
+import dev.tvnclr.otpilot.SensitiveNotifAccess
 
 @Immutable
 data class PermissionsUiState(

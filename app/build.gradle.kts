@@ -13,16 +13,27 @@ plugins {
   id("com.google.protobuf") version "0.9.5"
 }
 
+// OTPilot: builds outside main are test builds named "<base>-dev.N", N = commits since the last
+// stable tag (dev prerelease tags are skipped so the count does not reset when one is published).
+val baseVersion = "1.1.0"
+
+fun git(vararg args: String): String? =
+    runCatching { providers.exec { commandLine("git", *args) }.standardOutput.asText.get().trim() }.getOrNull()?.takeIf { it.isNotEmpty() }
+
+val appVersion: String =
+    if (git("rev-parse", "--abbrev-ref", "HEAD") == "main") baseVersion
+    else "$baseVersion-dev." + (git("describe", "--tags", "--abbrev=0", "--exclude=*-dev.*")?.let { git("rev-list", "--count", "$it..HEAD") } ?: "0")
+
 android {
   namespace = "io.github.jd1378.otphelper"
   compileSdk = 36
 
   defaultConfig {
-    applicationId = "tvnclr.flightdeck.otpilot"
+    applicationId = "dev.tvnclr.otpilot"
     minSdk = 24
     targetSdk = 36
-    versionCode = 10
-    versionName = "1.0.0"
+    versionCode = 11
+    versionName = appVersion
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables { useSupportLibrary = true }
@@ -46,6 +57,7 @@ android {
     release {
       if (otpilotKeystoreProps.exists()) signingConfig = signingConfigs.getByName("otpilot")
       isMinifyEnabled = true
+      isShrinkResources = true
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
   }
@@ -91,8 +103,8 @@ dependencies {
   implementation("androidx.compose.ui:ui-tooling-preview")
   implementation("androidx.compose.material3:material3")
   implementation("androidx.compose.material:material-icons-core")
-  // OTPilot: Flightdeck UI design system
-  implementation(project(":flightdeck-ui"))
+  // OTPilot: tvnclr-ui design system
+  implementation(project(":tvnclr-ui"))
   implementation("androidx.datastore:datastore-preferences:1.1.7")
   testImplementation("junit:junit:4.13.2")
   testImplementation("org.yaml:snakeyaml:2.2")

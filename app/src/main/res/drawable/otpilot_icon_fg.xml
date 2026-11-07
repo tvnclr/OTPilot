@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- OTPilot icon: artificial horizon whose horizon line is a one-time code -->
-<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+<!-- OTPilot icon: a tilted code card (three masked digits) with the tvnclr impact strokes -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
   <group android:pivotX="54" android:pivotY="54" android:rotation="-12">
-    <group android:name="sky">
-      <clip-path android:pathData="M30,54 a24,24 0 1,1 48,0 a24,24 0 1,1 -48,0"/>
-      <path android:fillColor="#29FFFFFF" android:pathData="M20,20 h68 v30 h-68 z"/>
-    </group>
-    <path android:fillColor="#FFFFFFFF" android:pathData="M40.5,50 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0 M47.5,50 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0 M54.5,50 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0 M61.5,50 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0"/>
-    <path android:strokeColor="#FFFFFFFF" android:strokeWidth="2.8" android:strokeLineCap="round" android:pathData="M28,50 L37,50 M71,50 L80,50"/>
+    <path android:strokeColor="#FFFFFFFF" android:strokeWidth="4" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M44.8,34 H63.2 A10.8,10.8 0 0,1 74,44.8 V63.2 A10.8,10.8 0 0,1 63.2,74 H44.8 A10.8,10.8 0 0,1 34,63.2 V44.8 A10.8,10.8 0 0,1 44.8,34 Z"/>
+    <path android:strokeColor="#FFFFFFFF" android:strokeWidth="3" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M44.000,57.600 L44.000,50.400 M40.882,55.800 L47.118,52.200 M47.118,55.800 L40.882,52.200 M54.000,57.600 L54.000,50.400 M50.882,55.800 L57.118,52.200 M57.118,55.800 L50.882,52.200 M64.000,57.600 L64.000,50.400 M60.882,55.800 L67.118,52.200 M67.118,55.800 L60.882,52.200"/>
   </group>
-  <path android:strokeColor="#FFFFFFFF" android:strokeWidth="4" android:pathData="M27,54 a27,27 0 1,1 54,0 a27,27 0 1,1 -54,0"/>
-  <path android:strokeColor="#FF9DB8FF" android:strokeWidth="3.4" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M38,63 H47 L54,69 L61,63 H70"/>
+  <path android:strokeColor="#FFFFFFFF" android:strokeWidth="3.4" android:strokeLineCap="round" android:strokeLineJoin="round" android:pathData="M71,31 L73.5,28.5 M75.5,40 L79.5,39 M61,27 L62,23.5"/>
 </vector>

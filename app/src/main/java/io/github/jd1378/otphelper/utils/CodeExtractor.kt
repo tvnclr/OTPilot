@@ -4,7 +4,7 @@ import androidx.compose.runtime.Immutable
 import io.github.jd1378.otphelper.utils.CodeExtractorDefaults.currencyIndicators
 import io.github.jd1378.otphelper.utils.CodeExtractorDefaults.skipPhrases
 import kotlinx.collections.immutable.persistentListOf
-import tvnclr.flightdeck.otpilot.ContextFallback
+import dev.tvnclr.otpilot.ContextFallback
 
 @Immutable
 data class CodeExtractorResult(

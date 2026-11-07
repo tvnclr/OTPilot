@@ -66,10 +66,10 @@ class MainActivity : AppCompatActivity() {
     setContent { OtpHelperApp(deepLinkHandler) }
 
     // OTPilot: blank recents thumbnail by default; user can allow the preview in Settings
-    tvnclr.flightdeck.otpilot.OtpilotPrefs.applyRecentsPreview(this, false)
+    dev.tvnclr.otpilot.OtpilotPrefs.applyRecentsPreview(this, false)
     lifecycleScope.launch {
-      tvnclr.flightdeck.otpilot.OtpilotPrefs.recentsPreview(applicationContext).collect {
-        tvnclr.flightdeck.otpilot.OtpilotPrefs.applyRecentsPreview(this@MainActivity, it)
+      dev.tvnclr.otpilot.OtpilotPrefs.recentsPreview(applicationContext).collect {
+        dev.tvnclr.otpilot.OtpilotPrefs.applyRecentsPreview(this@MainActivity, it)
       }
     }
   }

@@ -11,7 +11,7 @@
   <string name="otpilot_sensitive_blocked_title">O OTPilot não consegue ver notificações com código</string>
   <string name="otpilot_sensitive_blocked_text">O Android está escondendo do OTPilot as notificações que contêm códigos, então elas não serão copiadas. Abra o OTPilot para corrigir.</string>
 
-  <!-- Flightdeck UI: Home -->
+  <!-- tvnclr-ui: Home -->
   <string name="otp_home_subtitle">Relaxa, seu código está a caminho.</string>
   <string name="otp_status_engaged">Piloto automático ligado</string>
   <string name="otp_status_engaged_desc">Os códigos estão sendo detectados.</string>
@@ -50,7 +50,7 @@
   <string name="otp_about_desc">Versão, licença, código-fonte</string>
   <string name="otp_auto_copy_off_hint">A cópia automática está desligada: os códigos aparecem numa notificação com um botão de copiar.</string>
 
-  <!-- Flightdeck UI: Settings -->
+  <!-- tvnclr-ui: Settings -->
   <string name="otp_settings_subtitle">Ajuste como o OTPilot funciona.</string>
   <string name="otp_appearance">Aparência</string>
   <string name="otp_theme">Tema</string>
@@ -83,7 +83,7 @@
   <string name="otp_intent_action">Ação do intent</string>
   <string name="otp_copy">Copiar</string>
 
-  <!-- Flightdeck UI: other screens -->
+  <!-- tvnclr-ui: other screens -->
   <string name="otp_mode_subtitle">Como o OTPilot recebe seus códigos.</string>
   <string name="otp_mode_android15_title">Sobre o Android 15 e mais recentes</string>
   <string name="otp_mode_unavailable">Indisponível nesta versão</string>

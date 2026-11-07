@@ -37,7 +37,7 @@ import io.github.jd1378.otphelper.ui.components.SkipDialog
 import io.github.jd1378.otphelper.ui.components.TitleBar
 import io.github.jd1378.otphelper.ui.components.TodoItem
 import io.github.jd1378.otphelper.ui.components.verticalColumnScrollbar
-import tvnclr.flightdeck.otpilot.SensitiveNotifAccess
+import dev.tvnclr.otpilot.SensitiveNotifAccess
 
 @Composable
 fun Permissions(

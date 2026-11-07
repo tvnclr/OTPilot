@@ -17,4 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "OTPilot"
 
 include(":app")
-include(":flightdeck-ui")
+include(":tvnclr-ui")
