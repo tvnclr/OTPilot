@@ -165,3 +165,8 @@
 - name: guard_fallback_distance
   expectedCode: ~
   message: "Your verification code was sent to the phone number on file. If you did not ask for it, someone may be trying to get into your account, so change your password and review the devices signed in to it. You can manage all of this in the security page of your account settings. Example Corp, PO Box 48213"
+
+# A lowercase word after "código" is not a code (Claude notification, Nov 2026).
+- name: guard_word_after_keyword_pt
+  expectedCode: ~
+  message: "Li o código do atualizador do Equicord que vem no fork e o resultado do teste. O problema: Por que não tenta de novo: o Equicord procura atualização uma vez só, quando o Discord…"

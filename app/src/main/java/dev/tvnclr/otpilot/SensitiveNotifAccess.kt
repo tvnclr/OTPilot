@@ -10,6 +10,7 @@ import android.os.Process
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import io.github.jd1378.otphelper.R
+import io.github.jd1378.otphelper.NotificationListener
 import io.github.jd1378.otphelper.utils.AppLogger
 import io.github.jd1378.otphelper.utils.NotificationHelper
 import java.util.concurrent.TimeUnit
@@ -67,7 +68,15 @@ object SensitiveNotifAccess {
   fun grantWithRoot(context: Context): GrantResult {
     if (!isRestricted()) return GrantResult.GRANTED
     val user = Process.myUid() / 100_000
-    val su = runAsRoot("cmd appops set --user $user ${context.packageName} $OP_NAME allow")
+    // The system only applies this access to a notification listener when it binds, so a listener
+    // that is already connected keeps getting redacted codes until it reconnects. Rebind ours right
+    // after the grant (only if notification access is already on: allow_listener would turn it on).
+    val listener = "${context.packageName}/${NotificationListener::class.java.name}"
+    val rebind =
+        if (NotificationListener.isNotificationListenerServiceEnabled(context))
+            " && cmd notification disallow_listener $listener && cmd notification allow_listener $listener"
+        else ""
+    val su = runAsRoot("cmd appops set --user $user ${context.packageName} $OP_NAME allow$rebind")
     val after = state(context)
     AppLogger.i(TAG, "grantWithRoot: su=$su, state=$after")
     return when {

@@ -15,7 +15,7 @@ plugins {
 
 // OTPilot: builds outside main are test builds named "<base>-dev.N", N = commits since the last
 // stable tag (dev prerelease tags are skipped so the count does not reset when one is published).
-val baseVersion = "1.1.0"
+val baseVersion = "1.1.1"
 
 fun git(vararg args: String): String? =
     runCatching { providers.exec { commandLine("git", *args) }.standardOutput.asText.get().trim() }.getOrNull()?.takeIf { it.isNotEmpty() }
@@ -32,7 +32,7 @@ android {
     applicationId = "dev.tvnclr.otpilot"
     minSdk = 24
     targetSdk = 36
-    versionCode = 11
+    versionCode = 12
     versionName = appVersion
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

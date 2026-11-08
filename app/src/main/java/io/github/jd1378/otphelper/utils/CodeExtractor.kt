@@ -159,6 +159,11 @@ class CodeExtractor // this comment is to separate parts
           .toRegex(setOf(RegexOption.IGNORE_CASE, RegexOption.MULTILINE))
 
   // doCleanup is added for convenience in unit testing
+  // OTPilot: a code made only of letters must be all uppercase ("ABCDEF"); otherwise ordinary words
+  // after a keyword ("o código ... que vem no fork") were taken as codes.
+  private fun isPlausibleCode(value: String): Boolean =
+      value.isNotEmpty() && (value.any { it.isDigit() } || value.none { it.isLowerCase() })
+
   fun getCode(str: String, doCleanup: Boolean = true): String? {
     if (sensitivePhrases.isEmpty()) return null
     val cleanStr =
@@ -173,7 +178,7 @@ class CodeExtractor // this comment is to separate parts
       // so we only run google's regex only if general regex did not capture the "code" group
       var foundCode =
           results
-              .find { it.groups[3]!!.value.isNotEmpty() }
+              .find { isPlausibleCode(it.groups[3]!!.value) }
               ?.groups
               ?.get(3)
               ?.value
@@ -222,7 +227,7 @@ class CodeExtractor // this comment is to separate parts
     if (results.count() > 0) {
       // generalCodeMatcher also detects if the text contains "code" keyword
       // so we only run google's regex only if general regex did not capture the "code" group
-      var match = results.find { it.groups[3]!!.value.isNotEmpty() }
+      var match = results.find { isPlausibleCode(it.groups[3]!!.value) }
       val foundCode = match?.groups?.get(3)?.value?.replace(" ", "")?.replace("-", "")
       if (foundCode !== null) {
         return CodeExtractorResult(match!!, 1, 3)
