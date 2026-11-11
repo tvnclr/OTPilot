@@ -93,6 +93,9 @@ android {
     includeInApk = false
     includeInBundle = false
   }
+  // OTPilot: keep the git commit out of the APK, so the same code built from main and from the
+  // fdroid branch gives byte-identical APKs (reproducible builds on F-Droid)
+  buildTypes.all { vcsInfo { include = false } }
   androidResources { generateLocaleConfig = true }
 
   applicationVariants.all(ApplicationVariantAction())
