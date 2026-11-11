@@ -1,0 +1,3 @@
+• Corrigido: com root, códigos que o Android marca como sensíveis chegavam escondidos depois de reiniciar, até abrir o app
+• Corrigido: palavras comuns em minúsculas depois de "código" eram copiadas como código
+• Página da loja, prints e nomes que sobraram do OTP Helper atualizados

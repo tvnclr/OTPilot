@@ -1,6 +1,27 @@
-An open-source application that allows you to copy OTP and codes from SMS and notifications automatically by reading all of your notifications.
+OTPilot watches incoming SMS and notifications, finds the verification code and puts it on your clipboard before you even open the message.
 
-The application works completely offline and without internet permission. So you can be rest assured that your data does not leave your device.
+<b>No internet permission.</b> Nothing it reads ever leaves your device.
 
-If you have any problems or suggestions, submit them in our GitHub repository:
-https://github.com/jd1378/otphelper/issues
+<b>Root-aware</b>
+Android 15 and newer hide notifications that contain codes from third-party apps. On a rooted device (KernelSU and its forks, or Magisk), OTPilot grants itself that access, reconnects its notification listener so the access takes effect right away, and re-applies it after every boot. Without root, the permissions screen shows the ADB commands to run once.
+
+<b>Smarter extraction</b>
+<ul>
+<li>Keyword-anchored detection in many languages, plus a context fallback for messages where the code comes a little after the keyword ("use the verification code below ... 316974").</li>
+<li>Guards against false positives: a bare "code" only counts when the words around it make it a sign-in code, numbers far from the keyword are ignored, and ordinary words are not taken as codes.</li>
+<li>Every release must pass a corpus of real SMS and email messages (English, Portuguese, Spanish).</li>
+</ul>
+
+<b>Honest status</b>
+The home screen shows whether every permission OTPilot depends on is in place, and you get a notification if access is lost.
+
+<b>Also</b>
+<ul>
+<li>History of detected codes, with the keyword and code highlighted; can be turned off, or saved with the digits replaced by zeros.</li>
+<li>Detection test to check any text before relying on it.</li>
+<li>Ignore apps, notification tags or SMS senders.</li>
+<li>Light, dark and AMOLED themes, 8 accent colors or Material You, and optional animated backgrounds.</li>
+<li>Broadcast for automation apps (Tasker, MacroDroid): dev.tvnclr.otpilot.actions.code_detected</li>
+</ul>
+
+OTPilot is a fork of OTP Helper by jd1378, under the same AGPL-3.0 license.

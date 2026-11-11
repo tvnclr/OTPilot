@@ -1,3 +1,5 @@
-- added chinese sensitive keyword "校验码" (for alipay)
-- improved code matching pattern. this should help capture some more codes.
-- changed ignore button to ignore app instead when no tag is found. this should improve UX a bit.
+• New icon, with a themed version for icon packs
+• Package renamed to dev.tvnclr.otpilot (installs next to 1.0.x)
+• Context fallback no longer copies unrelated numbers (e.g. a ZIP code in an email footer)
+• "Remain open" shows the system battery dialog directly
+• Grant (root) explains the KernelSU step and tells "no root" apart from a denied request

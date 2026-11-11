@@ -18,16 +18,16 @@ class NotifActionReceiver : BroadcastReceiver() {
   @Inject lateinit var ignoredNotifsRepository: IgnoredNotifsRepository
 
   companion object {
-    const val INTENT_ACTION_CODE_COPY = "io.github.jd1378.otphelper.actions.code_copy"
+    const val INTENT_ACTION_CODE_COPY = "dev.tvnclr.otpilot.actions.code_copy"
     const val INTENT_ACTION_IGNORE_TAG_NOTIFICATION_TAG =
-        "io.github.jd1378.otphelper.actions.ignore_notif_tag"
+        "dev.tvnclr.otpilot.actions.ignore_notif_tag"
     const val INTENT_ACTION_IGNORE_TAG_NOTIFICATION_NID =
-        "io.github.jd1378.otphelper.actions.ignore_notif_nid"
+        "dev.tvnclr.otpilot.actions.ignore_notif_nid"
     const val INTENT_ACTION_IGNORE_NOTIFICATION_APP =
-        "io.github.jd1378.otphelper.actions.ignore_notif_app"
+        "dev.tvnclr.otpilot.actions.ignore_notif_app"
     const val INTENT_ACTION_IGNORE_SMS_ORIGIN =
-        "io.github.jd1378.otphelper.actions.ignore_sms_origin"
-    const val INTENT_ACTION_SHOW_DETAILS = "io.github.jd1378.otphelper.actions.show_details"
+        "dev.tvnclr.otpilot.actions.ignore_sms_origin"
+    const val INTENT_ACTION_SHOW_DETAILS = "dev.tvnclr.otpilot.actions.show_details"
   }
 
   override fun onReceive(context: Context?, intent: Intent?) {

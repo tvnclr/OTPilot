@@ -1,3 +1,1 @@
-- add Italian translation and sensitive keyword (codice)
-- app no longer detects code from notifications that have a service attached (like notifications that control media). this should reduce false positives.
-- removed mã sensitive keyword as it has too many false positives.
+First release of OTPilot, a fork of OTP Helper 1.20.7: new interface, root-aware access to code notifications on Android 15+, context fallback extraction and a regression corpus.

@@ -1,5 +1,4 @@
 <resources>
-  <string name="app_name">Copy SMS Code</string>
   <string name="detected_code">Detected Code:</string>
   <string name="code_detected_channel_name">Code Detected</string>
   <string name="code_detected_channel_description">whenever a code is detected, a notification will be sent from this channel</string>

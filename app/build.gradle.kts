@@ -20,8 +20,11 @@ val baseVersion = "1.1.1"
 fun git(vararg args: String): String? =
     runCatching { providers.exec { commandLine("git", *args) }.standardOutput.asText.get().trim() }.getOrNull()?.takeIf { it.isNotEmpty() }
 
+// A build is stable on main, or when the commit is exactly a stable tag (F-Droid builds from the tag
+// with a detached HEAD, so the branch name alone is not enough).
+val onStableTag = git("describe", "--tags", "--exact-match", "--match", "v[0-9]*", "--exclude", "*-dev.*") != null
 val appVersion: String =
-    if (git("rev-parse", "--abbrev-ref", "HEAD") == "main") baseVersion
+    if (onStableTag || git("rev-parse", "--abbrev-ref", "HEAD") == "main") baseVersion
     else "$baseVersion-dev." + (git("describe", "--tags", "--abbrev=0", "--exclude=*-dev.*")?.let { git("rev-list", "--count", "$it..HEAD") } ?: "0")
 
 android {
@@ -84,6 +87,12 @@ android {
     buildConfig = true
   }
   packaging { resources { excludes += "/META-INF/{AL2.0,LGPL2.1}" } }
+  // OTPilot: no Google-encrypted dependency metadata in the APK (F-Droid rejects it, and it is not
+  // needed outside Google Play)
+  dependenciesInfo {
+    includeInApk = false
+    includeInBundle = false
+  }
   androidResources { generateLocaleConfig = true }
 
   applicationVariants.all(ApplicationVariantAction())

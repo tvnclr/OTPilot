@@ -1,1 +1,1 @@
-an open-source app that can detect and copy any code for you
+Copies one-time codes from SMS and notifications, offline and root-aware

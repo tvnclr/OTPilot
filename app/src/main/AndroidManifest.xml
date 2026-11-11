@@ -34,7 +34,7 @@
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
 
-        <data android:scheme="otphelper" />
+        <data android:scheme="otpilot" />
         <data android:host="history_detail" />
         <data android:host="permissions" />
         <data android:host="home" />
@@ -63,14 +63,14 @@
     <receiver
         android:name=".NotifActionReceiver"
         android:exported="true"
-        android:permission="io.github.jd1378.otphelper.permission.BROADCAST_CODE">
+        android:permission="dev.tvnclr.otpilot.permission.BROADCAST_CODE">
       <intent-filter>
-        <action android:name="io.github.jd1378.otphelper.actions.code_copy" />
-        <action android:name="io.github.jd1378.otphelper.actions.ignore_notif_app" />
-        <action android:name="io.github.jd1378.otphelper.actions.ignore_notif_tag" />
-        <action android:name="io.github.jd1378.otphelper.actions.ignore_notif_nid" />
-        <action android:name="io.github.jd1378.otphelper.actions.ignore_sms_origin" />
-        <action android:name="io.github.jd1378.otphelper.actions.show_details" />
+        <action android:name="dev.tvnclr.otpilot.actions.code_copy" />
+        <action android:name="dev.tvnclr.otpilot.actions.ignore_notif_app" />
+        <action android:name="dev.tvnclr.otpilot.actions.ignore_notif_tag" />
+        <action android:name="dev.tvnclr.otpilot.actions.ignore_notif_nid" />
+        <action android:name="dev.tvnclr.otpilot.actions.ignore_sms_origin" />
+        <action android:name="dev.tvnclr.otpilot.actions.show_details" />
       </intent-filter>
     </receiver>
     <receiver

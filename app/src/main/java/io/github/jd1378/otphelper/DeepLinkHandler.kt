@@ -41,7 +41,7 @@ sealed interface Event {
   data object None : Event
 }
 
-const val OTPHELPER_APP_SCHEME = "otphelper"
+const val OTPHELPER_APP_SCHEME = "otpilot"
 
 fun getDeepLinkPendingIntent(
   context: Context,

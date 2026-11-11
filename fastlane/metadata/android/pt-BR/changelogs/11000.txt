@@ -1,0 +1,5 @@
+• Ícone novo, com versão temática para icon packs
+• Pacote renomeado para dev.tvnclr.otpilot (instala ao lado da 1.0.x)
+• O reforço de contexto não copia mais números sem relação (ex.: CEP no rodapé de email)
+• "Remain open" abre direto o diálogo de bateria do sistema
+• Conceder (root) explica o passo do KernelSU e separa "sem root" de pedido negado

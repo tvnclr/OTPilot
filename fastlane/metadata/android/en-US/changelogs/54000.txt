@@ -1,1 +1,0 @@
-- Fixed regressions in some languages. This won't affect your current settings unless you reset your sensitive phrases back to default.

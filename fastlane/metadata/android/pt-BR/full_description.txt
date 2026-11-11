@@ -1,0 +1,27 @@
+O OTPilot acompanha os SMS e as notificações que chegam, encontra o código de verificação e o coloca na área de transferência antes mesmo de você abrir a mensagem.
+
+<b>Sem permissão de internet.</b> Nada do que ele lê sai do seu aparelho.
+
+<b>Pensado para root</b>
+O Android 15 e versões mais novas escondem dos apps de terceiros as notificações que contêm códigos. Num aparelho com root (KernelSU e forks, ou Magisk), o OTPilot concede esse acesso a si mesmo, reconecta o leitor de notificações para o acesso valer na hora e reaplica tudo a cada reinício. Sem root, a tela de permissões mostra os comandos ADB para rodar uma vez.
+
+<b>Detecção mais esperta</b>
+<ul>
+<li>Detecção ancorada em palavras-chave em vários idiomas, com um reforço para mensagens em que o código vem um pouco depois da palavra-chave ("use o código de verificação abaixo ... 316974").</li>
+<li>Proteções contra falso positivo: um "code" solto só conta quando as palavras em volta indicam código de login, números longe da palavra-chave são ignorados e palavras comuns não viram código.</li>
+<li>Toda versão precisa passar num conjunto de SMS e emails reais (inglês, português e espanhol).</li>
+</ul>
+
+<b>Status honesto</b>
+A tela inicial mostra se cada permissão de que o OTPilot depende está ativa, e você recebe uma notificação se o acesso for perdido.
+
+<b>E mais</b>
+<ul>
+<li>Histórico dos códigos detectados, com a palavra-chave e o código destacados; pode ser desligado ou salvar os dígitos trocados por zeros.</li>
+<li>Teste de detecção para conferir qualquer texto antes de confiar nele.</li>
+<li>Ignorar apps, tags de notificação ou remetentes de SMS.</li>
+<li>Temas claro, escuro e AMOLED, 8 cores de destaque ou Material You, e fundos animados opcionais.</li>
+<li>Broadcast para apps de automação (Tasker, MacroDroid): dev.tvnclr.otpilot.actions.code_detected</li>
+</ul>
+
+O OTPilot é um fork do OTP Helper, de jd1378, sob a mesma licença AGPL-3.0.

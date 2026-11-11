@@ -1,0 +1,1 @@
+Primeira versão do OTPilot, fork do OTP Helper 1.20.7: interface nova, acesso por root às notificações com código no Android 15+, detecção com reforço de contexto e corpus de testes.
