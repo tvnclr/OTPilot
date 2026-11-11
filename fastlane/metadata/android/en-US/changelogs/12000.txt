@@ -1,3 +1,3 @@
 • Fixed: with root, codes Android marks as sensitive arrived hidden after a reboot until the app was restarted
 • Fixed: ordinary lowercase words after "code" were copied as codes
-• Store listing, screenshots and leftover names from OTP Helper updated
+• New screenshots in English and Portuguese

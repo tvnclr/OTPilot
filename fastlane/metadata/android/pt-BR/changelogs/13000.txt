@@ -1,0 +1,3 @@
+• Página da loja nova, escrita para o OTPilot (inglês e português)
+• Nomes que sobraram do OTP Helper removidos; os links internos agora são otpilot://
+• Builds feitas a partir de uma tag de versão mostram a versão estável
