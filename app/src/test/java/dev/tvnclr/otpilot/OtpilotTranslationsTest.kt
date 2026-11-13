@@ -8,12 +8,19 @@ import org.w3c.dom.Element
 
 /**
  * Every translatable string OTPilot adds (app/res/values/otpilot.xml and the tvnclr-ui library
- * strings) must exist in each locale listed in [REQUIRED_LOCALES], with the same format arguments.
+ * strings) must exist in every locale the app ships (each values-* folder of the app that has a
+ * strings.xml), with the same format arguments.
  * Prevents half-translated screens when a new string is added only in English.
  */
 class OtpilotTranslationsTest {
 
-  private val REQUIRED_LOCALES = listOf("b+pt+BR")
+  /** Every locale the app ships: the values-* folders of the app module that hold a strings.xml. */
+  private val REQUIRED_LOCALES: List<String> by lazy {
+    resDir("app")
+        .listFiles { f -> f.isDirectory && f.name.startsWith("values-") && File(f, "strings.xml").exists() }!!
+        .map { it.name.removePrefix("values-") }
+        .sorted()
+  }
 
   /** (base file, folder holding the values-* dirs) */
   private val sources =
@@ -58,6 +65,7 @@ class OtpilotTranslationsTest {
         }
       }
     }
+    assertTrue("no locales found", REQUIRED_LOCALES.size > 1)
     assertTrue(problems.joinToString("\n", prefix = "Untranslated strings:\n"), problems.isEmpty())
   }
 }
