@@ -53,6 +53,10 @@ gradlew.bat testNormalReleaseUnitTest assembleNormalRelease --offline
   `<sdk>` = `C:\Claude folder\figurinhas-gato\tools\android-sdk`.
   App language: `adb shell cmd locale set-app-locales dev.tvnclr.otpilot --user 0 --locales ar`.
   Simulated SMS: `adb emu sms send 30340 "Your code is 123456"`.
+  All languages at once: `C:\Claude folder\OTPilot-prints\emu\capture.ps1` takes home,
+  permissions, settings and about in every locale listed in `locs.json` next to it
+  (screenshots in `emu\locales\`). Look for words split mid-word, clipped text,
+  missing glyphs, RTL reordering and strings still in English.
 - Owner's phone (POCO X7 Pro, KernelSU fork) only for what the emulator cannot
   show: root grant, sensitive-notification redaction, ROM quirks. Screenshots
   for the README must not show the status bar, notifications or personal data.
