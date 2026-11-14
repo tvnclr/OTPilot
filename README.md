@@ -49,7 +49,7 @@ stages:
 - [x] New interface (tvnclr-ui): light, dark and AMOLED themes, 8 accent colors or Material You
 - [x] New icon, with a themed (monochrome) version that works in icon packs
 - [x] All 26 app languages cover OTPilot's own screens (machine-assisted, corrections welcome)
-- [ ] Next: IzzyOnDroid and F-Droid submissions (F-Droid builds from the `fdroid` branch)
+- [ ] Next: F-Droid submission (F-Droid builds from the `fdroid` branch)
 
 ## Requirements
 

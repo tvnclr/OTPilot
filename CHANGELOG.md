@@ -11,6 +11,7 @@ release notes for stores live in `fastlane/metadata/android/*/changelogs/`.
 - `fdroid` branch created from `main` with a literal `versionName`, tagged
   `v1.1.2-fdroid`; it builds the same APK as `main` (Gradle found nothing to repackage).
 - Submission is not sent yet: F-Droid metadata draft prepared outside the repo.
+  Only F-Droid: IzzyOnDroid rejects apps whose code was written with generative AI.
 
 ### 2026-11-14 — Emulator check of the other 20 languages
 - Screenshots of home, permissions, settings and about in bg, bn, ca, et, fa,
