@@ -4,6 +4,15 @@ Work log of OTPilot, newest first. Releases and their APKs are on
 [GitHub Releases](https://github.com/tvnclr/OTPilot/releases); user-facing
 release notes for stores live in `fastlane/metadata/android/*/changelogs/`.
 
+## Unreleased
+
+### 2026-11-14 — tvnclr-ui 1.0.3
+- Submodule `tvnclr-ui` from `v1.0.2` to `v1.0.3`: text on accent fills is
+  picked by contrast. With the dark theme and the default Violet accent (and
+  Red), the primary button, the selected segment and chip and the switch thumb
+  had white text at 2.5:1; they now use `#15131C` (7.4:1 and 8.3:1).
+- Checked: `testNormalReleaseUnitTest assembleNormalRelease` (261 tests, 0 failures).
+  Not installed on a device.
 ## 1.1.2 — 2026-11-14
 
 ### 2026-11-14 — Release and F-Droid branch
