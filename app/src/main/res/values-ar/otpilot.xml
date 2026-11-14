@@ -83,7 +83,7 @@
   <string name="otp_perm_subtitle">ما يحتاجه OTPilot ليعمل بثبات.</string>
   <string name="otp_perm_required">مطلوب</string>
   <string name="otp_perm_background">الخلفية</string>
-  <string name="otp_perm_code_notifs">إشعارات الرموز (Android 15+)</string>
+  <string name="otp_perm_code_notifs">إشعارات الرموز (⁨Android 15+⁩)</string>
   <string name="otp_perm_device">خاص بالجهاز</string>
   <string name="otp_perm_manual">إذا لم يكن لديك روت، شغّل هذه الأوامر من حاسوب:</string>
   <string name="otp_setup_step">الخطوة %1$d من %2$d</string>
@@ -107,7 +107,7 @@
   <string name="otp_test_after_cleanup">النص بعد التنظيف</string>
   <string name="otp_language_subtitle">لغة التطبيق، مستقلة عن النظام.</string>
   <string name="otp_about_tagline">رموز لمرة واحدة، على الطيار الآلي.</string>
-  <string name="otp_about_fork">نسخة مشتقة من OTP Helper من jd1378، بنفس ترخيص AGPL-3.0.</string>
+  <string name="otp_about_fork">نسخة مشتقة من OTP Helper من jd1378، بنفس ترخيص ⁨AGPL-3.0⁩.</string>
   <string name="otp_about_upstream">المشروع الأصلي</string>
   <string name="otp_about_source">الشيفرة المصدرية</string>
   <string name="otp_about_privacy">الخصوصية</string>

@@ -83,7 +83,7 @@
   <string name="otp_perm_subtitle">מה ש-OTPilot צריך כדי לפעול באמינות.</string>
   <string name="otp_perm_required">נדרש</string>
   <string name="otp_perm_background">רקע</string>
-  <string name="otp_perm_code_notifs">התראות עם קודים (Android 15+)</string>
+  <string name="otp_perm_code_notifs">התראות עם קודים (⁨Android 15+⁩)</string>
   <string name="otp_perm_device">לפי מכשיר</string>
   <string name="otp_perm_manual">אם אין לך רוט, יש להריץ את אלה ממחשב:</string>
   <string name="otp_setup_step">שלב %1$d מתוך %2$d</string>
@@ -107,7 +107,7 @@
   <string name="otp_test_after_cleanup">הטקסט אחרי הניקוי</string>
   <string name="otp_language_subtitle">שפת האפליקציה, בנפרד מהמערכת.</string>
   <string name="otp_about_tagline">קודים חד-פעמיים, על טייס אוטומטי.</string>
-  <string name="otp_about_fork">פורק של OTP Helper מאת jd1378, תחת אותו רישיון AGPL-3.0.</string>
+  <string name="otp_about_fork">פורק של OTP Helper מאת jd1378, תחת אותו רישיון ⁨AGPL-3.0⁩.</string>
   <string name="otp_about_upstream">הפרויקט המקורי</string>
   <string name="otp_about_source">קוד מקור</string>
   <string name="otp_about_privacy">פרטיות</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="otpilot_sensitive_todo">Code-Benachrichtigungen lesen</string>
+  <string name="otpilot_sensitive_todo">Code-Mitteilungen lesen</string>
   <string name="otpilot_sensitive_grant">Erlauben</string>
   <string name="otpilot_sensitive_desc_allowed">Android 15+ verbirgt Benachrichtigungen mit Codes vor den meisten Apps. OTPilot hat Zugriff darauf.</string>
   <string name="otpilot_sensitive_desc_blocked">Android 15+ verbirgt Benachrichtigungen mit Codes vor den meisten Apps, und OTPilot ist derzeit blockiert. Mit Root: Unter KernelSU (und Forks wie KowSU oder SukiSU) zuerst OTPilot in der Superuser-Liste des Managers erlauben, dann auf Erlauben tippen; unter Magisk auf Erlauben tippen und die Anfrage bestätigen. Ohne Root diese ADB-Befehle einmal ausführen:</string>
@@ -16,14 +16,14 @@
   <string name="otp_status_attention_desc">Etwas weiter unten verhindert, dass Codes erkannt werden.</string>
   <string name="otp_status_setup">Noch nicht eingerichtet</string>
   <string name="otp_mode">Modus</string>
-  <string name="otp_mode_notifications">Benachrichtigungen</string>
+  <string name="otp_mode_notifications">Mitteilungen</string>
   <string name="otp_mode_sms">SMS</string>
   <string name="otp_mode_none">Nicht gewählt</string>
-  <string name="otp_notif_access">Benachrichtigungszugriff</string>
+  <string name="otp_notif_access">Zugriff auf Mitteilungen</string>
   <string name="otp_sms_access">SMS-Zugriff</string>
-  <string name="otp_code_notifs">Code-Benachrichtigungen</string>
+  <string name="otp_code_notifs">Code-Mitteilungen</string>
   <string name="otp_background">Hintergrund</string>
-  <string name="otp_post_notifs">App-Benachrichtigungen</string>
+  <string name="otp_post_notifs">App-Mitteilungen</string>
   <string name="otp_ok">OK</string>
   <string name="otp_granted">Gewährt</string>
   <string name="otp_missing">Fehlt</string>
@@ -83,7 +83,7 @@
   <string name="otp_perm_subtitle">Was OTPilot für einen zuverlässigen Betrieb braucht.</string>
   <string name="otp_perm_required">Erforderlich</string>
   <string name="otp_perm_background">Hintergrund</string>
-  <string name="otp_perm_code_notifs">Code-Benachrichtigungen (Android 15+)</string>
+  <string name="otp_perm_code_notifs">Code-Mitteilungen (Android 15+)</string>
   <string name="otp_perm_device">Gerätespezifisch</string>
   <string name="otp_perm_manual">Ohne Root diese Befehle an einem Computer ausführen:</string>
   <string name="otp_setup_step">Schritt %1$d von %2$d</string>
