@@ -6,6 +6,18 @@ release notes for stores live in `fastlane/metadata/android/*/changelogs/`.
 
 ## 1.1.2 (in progress, branch `dev`)
 
+### 2026-11-14 — Emulator check of the other 20 languages
+- Screenshots of home, permissions, settings and about in bg, bn, ca, et, fa,
+  fr, hi, id, it, he, ko, pl, pt, ro, ru, tr, uk, vi, zh-Hans and zh-Hant
+  (80 screens, `OTPilot-prints/emu/capture.ps1`). Layout, glyphs and RTL were
+  fine in all of them.
+- Fixed in the strings inherited from OTP Helper: Hebrew had about 65 strings
+  still in English (settings, history, phrases, permissions); a few left in
+  English in Hindi, Italian, Polish, Vietnamese, and "Ignore ID" in 8 locales;
+  wrong meanings ("About me" in Hindi, "About us" in Polish and Vietnamese,
+  "About" untranslated and "Show toasted bread" in Italian, a "backgroud" typo).
+- Not covered by any check: grammar a native speaker would notice.
+
 ### 2026-11-14 — Emulator check of the translations
 - Android Emulator (API 37, Google APIs, x86_64) set up on the build PC to test
   without the phone; how to use it is in AGENTS.md.

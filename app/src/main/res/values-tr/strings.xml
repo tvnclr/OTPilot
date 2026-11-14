@@ -59,7 +59,7 @@
   <string name="application">Uygulama</string>
   <string name="notification_tag">Etiket</string>
   <string name="notification">Bildirim</string>
-  <string name="ignore_id">Ignore ID</string>
+  <string name="ignore_id">ID\'yi yoksay</string>
   <string name="show_details">Detaylar göster</string>
   <string name="history">Geçmiş</string>
   <string name="history_help">Geçmiş, son 10 giriş hariç her gün gece yarısı otomatik olarak silinecektir.</string>

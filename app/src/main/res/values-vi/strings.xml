@@ -44,7 +44,7 @@
   <string name="system_default">Mặc định hệ thống</string>
   <string name="search_language">Tìm kiếm ngôn ngữ</string>
   <string name="no_result">Không có kết quả</string>
-  <string name="about">Thông Tin Về Chúng Tôi</string>
+  <string name="about">Giới thiệu</string>
   <string name="label_version">Phiên bản:</string>
   <string name="label_license">Giấy phép:</string>
   <string name="label_source_code_link">Mã nguồn:</string>
@@ -89,9 +89,9 @@
   <string name="cancel">Huỷ</string>
   <string name="sensitive_phrases">Các cụm từ nhạy cảm</string>
   <string name="sensitive_phrases_desc">Bạn có thể thêm các cụm từ để kích hoạt phát hiện mã tại đây.</string>
-  <string name="sensitive_phrases_desc_regex">Phrases must be valid regex.</string>
-  <string name="new_sensitive_phrase">New Sensitive Phrase</string>
-  <string name="your_new_phrase">Your new phrase</string>
+  <string name="sensitive_phrases_desc_regex">Các cụm từ phải là regex hợp lệ.</string>
+  <string name="new_sensitive_phrase">Cụm từ nhận diện mới</string>
+  <string name="your_new_phrase">Cụm từ mới của bạn</string>
   <string name="copy_general_regex">Sao chép regex chung</string>
   <string name="copy_special_regex">Sao chép regex đặc biệt</string>
   <string name="ignored_phrases">Cụm từ bị bỏ qua</string>

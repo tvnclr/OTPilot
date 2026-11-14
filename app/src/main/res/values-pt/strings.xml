@@ -60,7 +60,7 @@
     <string name="application">Aplicativo</string>
     <string name="notification_tag">Etiqueta</string>
     <string name="notification_id">ID</string>
-    <string name="ignore_id">Ignore ID</string>
+    <string name="ignore_id">Ignorar ID</string>
     <string name="show_details">Mostrar detalhes</string>
     <string name="history">Histórico</string>
     <string name="history_help">O histórico será excluído automaticamente à meia-noite de todos os dias, exceto as últimas 10 entradas.</string>

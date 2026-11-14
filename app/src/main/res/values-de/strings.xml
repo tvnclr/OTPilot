@@ -60,7 +60,7 @@
   <string name="notification_id">ID</string>
   <string name="error">Fehler</string>
   <string name="notification">Benachrichtigung</string>
-  <string name="ignore_id">Ignore ID</string>
+  <string name="ignore_id">ID ignorieren</string>
   <string name="show_details">Details anzeigen</string>
   <string name="history">Zuletzt gelesen</string>
   <string name="history_help">Die Chronik wird jeden Tag um Mitternacht gelöscht, bis auf die letzten 10 Einträge.</string>
