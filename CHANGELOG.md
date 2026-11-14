@@ -4,7 +4,7 @@ Work log of OTPilot, newest first. Releases and their APKs are on
 [GitHub Releases](https://github.com/tvnclr/OTPilot/releases); user-facing
 release notes for stores live in `fastlane/metadata/android/*/changelogs/`.
 
-## 1.1.2 (in progress, branch `dev`)
+## 1.1.2 — 2026-11-14
 
 ### 2026-11-14 — Emulator check of the other 20 languages
 - Screenshots of home, permissions, settings and about in bg, bn, ca, et, fa,
