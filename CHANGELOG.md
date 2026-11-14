@@ -6,6 +6,12 @@ release notes for stores live in `fastlane/metadata/android/*/changelogs/`.
 
 ## 1.1.2 — 2026-11-14
 
+### 2026-11-14 — Release and F-Droid branch
+- 1.1.2 released (tag `v1.1.2`, APK in GitHub Releases).
+- `fdroid` branch created from `main` with a literal `versionName`, tagged
+  `v1.1.2-fdroid`; it builds the same APK as `main` (Gradle found nothing to repackage).
+- Submission is not sent yet: F-Droid metadata draft prepared outside the repo.
+
 ### 2026-11-14 — Emulator check of the other 20 languages
 - Screenshots of home, permissions, settings and about in bg, bn, ca, et, fa,
   fr, hi, id, it, he, ko, pl, pt, ro, ru, tr, uk, vi, zh-Hans and zh-Hant

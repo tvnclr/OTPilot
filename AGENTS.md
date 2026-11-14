@@ -16,6 +16,10 @@ README: it is required by the license and the owner wants it regardless.
 - `fdroid`: stable code for F-Droid, created from `main`; only F-Droid-specific
   changes live there. Keep features in all branches unless F-Droid requires
   removing one.
+  Each F-Droid release: merge `main` into `fdroid`, set the literal `versionName`
+  in `app/build.gradle.kts` (F-Droid's checkupdates reads it by regex), commit,
+  tag `vX.Y.Z-fdroid`. F-Droid publishes the developer-signed APK from the
+  `vX.Y.Z` GitHub release, so `main` and `fdroid` must build identical APKs.
 - Version: `baseVersion` and `versionCode` in `app/build.gradle.kts`.
   `versionName` is the base version on `main` or on a stable tag, otherwise
   `<base>-dev.N` (N = commits since the last stable tag).
