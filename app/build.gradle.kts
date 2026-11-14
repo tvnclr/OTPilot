@@ -36,7 +36,8 @@ android {
     minSdk = 24
     targetSdk = 36
     versionCode = 13
-    versionName = appVersion
+    // fdroid branch: literal so F-Droid's checkupdates can read it
+    versionName = "1.1.2"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     vectorDrawables { useSupportLibrary = true }
