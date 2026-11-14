@@ -48,6 +48,8 @@ stages:
 - [x] Context fallback extraction
 - [x] New interface (tvnclr-ui): light, dark and AMOLED themes, 8 accent colors or Material You
 - [x] New icon, with a themed (monochrome) version that works in icon packs
+- [x] All 26 app languages cover OTPilot's own screens (machine-assisted, corrections welcome)
+- [ ] Next: release 1.1.2 and submit to IzzyOnDroid and F-Droid
 
 ## Requirements
 
